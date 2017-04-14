@@ -1,13 +1,13 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DataExtractComponent }   from './dataextract.component';
-import { FetchByQueryComponent }      from './fetchbyquery.component';
+import { InneedHomeComponent }   from './inneedhome.component';
+import { AdvanceInneedSearchComponent }      from './advanceinneedsearch.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/dataextraction', pathMatch: 'full' },
-    { path: 'dataextraction', component: DataExtractComponent },
-    { path: 'fetchfromquery', component: FetchByQueryComponent }
+    { path: '', redirectTo: '/search', pathMatch: 'full' },
+    { path: 'inneedhome', component: InneedHomeComponent },
+    { path: 'search', component: AdvanceInneedSearchComponent }
   ];
 
 @NgModule({

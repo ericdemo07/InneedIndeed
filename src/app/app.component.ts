@@ -10,9 +10,9 @@ import { BiToolCommonService } from './bitoolcommon.service';
     template: `
     <h1>{{title}}</h1>
     <nav>
-      <a routerLink="/dataextraction" routerLinkActive="active">Data Extraction</a>
-      <a routerLink="/fetchfromquery"  routerLinkActive="active">Fetch By Query</a>
-      <a routerLink="/jobstatus" style=" pointer-events: none;cursor: default;" routerLinkActive="active">Job Status</a>
+      <a routerLink="/inneedhome" routerLinkActive="active">Inneed Home</a>
+      <a routerLink="/search"  routerLinkActive="active">Advance Inneed Search</a>
+    <!--  <a routerLink="/jobstatus" style=" pointer-events: none;cursor: default;" routerLinkActive="active">Job Status</a> -->
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -20,5 +20,5 @@ import { BiToolCommonService } from './bitoolcommon.service';
     providers: [BiToolCommonService]
 })
 export class AppComponent {
-    title = 'Business Intelligence Tool';
+    title = 'Inneed Indeed';
 }

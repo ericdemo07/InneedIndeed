@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 @Component({
     moduleId: module.id,
     selector: 'fetch-by-query',
-    templateUrl: './fetchbyquery.component.html',
-    styleUrls: ['./fetchbyquery.component.css']
+    templateUrl: './advanceinneedsearch.component.html',
+    styleUrls: ['./advanceinneedsearch.component.css']
 })
-export class FetchByQueryComponent {
+export class AdvanceInneedSearchComponent {
 }

@@ -1,0 +1,24 @@
+<div class="bord">
+    <!-- <div style="padding-top: 50px;"></div> -->
+    <md-grid-list cols="3" rowHeight="300px">
+        <md-grid-tile *ngFor="let inneed of inneeduserlist" [colspan]="inneed.cols" [rowspan]="inneed.rows">
+            <md-card class="example-card">
+                <md-card-header>
+                    <div md-card-avatar class="example-header-image"></div>
+                    <md-card-title>{{inneed.name}}</md-card-title>
+                    <md-card-subtitle>{{inneed.area}}</md-card-subtitle>
+                </md-card-header>
+                <img md-card-image src={{inneed.img}}>
+                <md-card-content>
+                    <p>
+                        {{inneed.content}}
+                    </p>
+                </md-card-content>
+                <md-card-actions>
+                    <button md-button>LIKE</button>
+                    <button md-button>SHARE</button>
+                </md-card-actions>
+            </md-card>
+        </md-grid-tile>
+    </md-grid-list>
+</div>
