@@ -1,0 +1,102 @@
+<div class="container-fluid bord">
+    <div [hidden]="!submitted">
+        <div class="headfont">
+            <h2>Data Extraction</h2>
+        </div>
+    </div>
+    <div [hidden]="submitted">
+        <div class="row">
+            <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 responsemessage">Message :</div>
+            <div class="col-md-10 col-xs-10 col-sm-10 col-lg-10 responsemessage">{{response}}</div>
+        </div>
+    </div>
+    <form (ngSubmit)="onSubmit()" #dataExtractForm="ngForm">
+        <div class="row">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 headfont">
+                <h4>Select <B>date range</B> for which data needs to be extracted</h4>
+            </div>
+            <div class="col-md-5 col-xs-5 col-sm-6 col-lg-5">
+                <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions" placeholder="Select a date range" [(ngModel)]="model.date" required></my-date-range-picker>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 headfont">
+                <h4>Choose your <B>output type</B> from the dropdown</h4>
+            </div>
+            <div class="col-md-5 col-xs-5 col-sm-6 col-lg-5">
+                <select required [(ngModel)]="model.inputtype" name="inputtype" #inputtype="ngModel">
+                      <option *ngFor="let inputtype of inputtypes" [value]="inputtype.id">{{inputtype.value}}</option>
+                    </select>
+                <div [hidden]="inputtype.valid || inputtype.pristine" class="customalert">
+                    InputType is required
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 headfont">
+                <h4>Make your choice among <B>PC</B> or <B>MOBILE</B></h4>
+            </div>
+            <div class="col-md-5 col-xs-5 col-sm-6 col-lg-5">
+                <label *ngFor="let item of radioItems">
+                    <input type="radio" name="devicetype" (click)="model.devicetype = item" [checked]="item === model.devicetype">
+                    {{item}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 headfont">
+                <h4>Select input csv file to <b>upload</b></h4>
+            </div>
+            <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+                <div class="file-upload">
+                    <input type="file" class="file-upload-button" required (change)="onChange($event)" name="inputfile" accept=".csv" />
+                    <i class="fa fa-upload" aria-hidden="true"></i>
+                </div>
+                <div [hidden]="!flagFileExist" class="fileuploadname">
+                    {{fileName}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 headfont">
+                <h4>Provide your <B>userId</B> assigned by admin</h4>
+            </div>
+            <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5 headfont">
+                <input class="icon" type="text" required [(ngModel)]="model.userid" name="userid" #userid="ngModel" placeholder="&#xf0f6;" />
+                <div [hidden]="userid.valid || userid.pristine" class="customalert">
+                    UserId is required
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 headfont">
+                <h4>Provide your rakuten <B>mailid</B></h4>
+            </div>
+            <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+                <input class="icon" type="email" required [(ngModel)]="model.mailid" name="mailid" #mailid="ngModel" placeholder="&#xf003;" />
+                <div [hidden]="mailid.valid || mailid.pristine" class="customalert">
+                    MailId is required
+                </div>
+            </div>
+        </div>
+        <div class="headfont">
+            <h2>Data Cleansing</h2>
+        </div>
+        <div class="row headfont">
+            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                <input type="checkbox" name="unique" value="true" [disabled]="model.uniquecount" [(ngModel)]="model.unique">&nbsp;&nbsp;Unique Records<br>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                <input type="checkbox" name="uniquecount" value="true" [(ngModel)]="model.uniquecount" (change)="uniqueCheckBoxEvent()">&nbsp;&nbsp;Unique Count<br>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                <input type="checkbox" name="completematch" value="true" [(ngModel)]="model.completematch">&nbsp;&nbsp;Complete Match<br>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                <input type="checkbox" name="onlyeasyid" value="true" [(ngModel)]="model.onlyeasyid">&nbsp;&nbsp;Only Easy Id<br>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!dataExtractForm.form.valid">Submit</button> &nbsp;&nbsp;
+        <button type="button" class="btn btn-default" (click)="dataExtractForm.form.markAsPristine()">New Request</button>
+    </form>
+</div>

@@ -1,0 +1,237 @@
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+[class*='col-']:last-of-type {
+    padding-right: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+h4 {
+    position: relative;
+}
+
+.grid {
+    margin: 0;
+}
+
+.col-1-4 {
+    width: 25%;
+}
+
+.module {
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+    max-height: 120px;
+    min-width: 120px;
+    background-color: #607D8B;
+    border-radius: 2px;
+}
+
+.homepage-image {
+    padding: 20px;
+    max-height: 220px;
+    min-width: 260px;
+}
+
+.module:hover {
+    background-color: #EEE;
+    cursor: pointer;
+    color: #607d8b;
+}
+
+.grid-pad {
+    padding: 10px 0;
+}
+
+.grid-pad>[class*='col-']:last-of-type {
+    padding-right: 20px;
+}
+
+@media (max-width: 600px) {
+    .module {
+        font-size: 10px;
+        max-height: 75px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        margin: 0;
+    }
+    .module {
+        min-width: 60px;
+    }
+}
+
+select {
+    padding-left: 5px;
+    outline: 0 !important;
+    border: none;
+    border: 1px solid #c4c4c4;
+    width: 260px;
+    height: 33px;
+    font-size: 16px;
+    font-family: 'FontAwesome', 'Catamaran', 'sans-serif';
+}
+
+select:focus {
+    border: 1px solid #000000;
+}
+
+input[type=text]:focus {
+    border: 1px solid #000000;
+}
+
+input[type=email]:focus {
+    border: 1px solid #000000;
+}
+
+input[type=text] {
+    padding-left: 5px;
+    outline: 0 !important;
+    -webkit-appearance: none;
+    border: none;
+    border: 1px solid #c4c4c4;
+    width: 260px;
+    height: 33px;
+    font-size: 16px;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: Catamaran, sans-serif;
+    font-style: normal;
+}
+
+input[type=email] {
+    padding-left: 5px;
+    outline: 0 !important;
+    -webkit-appearance: none;
+    border: none;
+    border: 1px solid #c4c4c4;
+    width: 260px;
+    height: 33px;
+    font-size: 16px;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: Catamaran, sans-serif;
+    font-style: normal;
+}
+
+.wrapper {
+    font-family: 'arial', sans-serif;
+}
+
+input.icon {
+    padding: 5px;
+}
+
+input:-webkit-autofill {
+    color: #2a2a2a !important;
+}
+
+input.icon::-webkit-input-placeholder {
+    text-align: right;
+    font-family: 'FontAwesome';
+}
+
+input.icon::-moz-placeholder {
+    text-align: right;
+    font-family: 'FontAwesome';
+}
+
+input.icon::-ms-input-placeholder {
+    text-align: right;
+    font-family: 'FontAwesome';
+}
+
+.customalert {
+    color: #ea3c57;
+    position: absolute;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.fileuploadname
+{
+  color: #607D8B;
+  position: absolute;
+  font-size: 12px;
+  overflow: hidden;
+  text-align: right;
+
+}
+.responsemessage {
+    color: #ea3c57;
+    font-size: 18px;
+    overflow: ellipsis;
+}
+
+.headfont {
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.file-upload {
+  font-family: monospace;
+    font-weight: 100;
+    position: relative;
+    overflow: hidden;
+    outline: 0 !important;
+    border: none;
+    border: 1px solid #c4c4c4;
+    width: 260px;
+    height: 33px;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+}
+
+.file-upload:hover {
+    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);
+    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);
+    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);
+    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);
+    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);
+    border: 1px solid #000000;
+    text-decoration: none;
+}
+
+.file-upload-button {
+    position: absolute;
+    height: 50px;
+    top: -10px;
+    left: -10px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.bord {
+    border-top-style: solid;
+    border-top-width: thin;
+    border-top-color: #607D8B;
+}
+
+/*.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}*/
