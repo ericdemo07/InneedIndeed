@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { InneedCommonService } from './inneedcommon.service';
+import { DefaultService } from './_services/default_service';
 
 @Component({
     moduleId: module.id,
@@ -10,14 +10,14 @@ import { InneedCommonService } from './inneedcommon.service';
     template: `
     <h1>{{title}}</h1>
     <nav>
-      <a routerLink="/inneedhome" routerLinkActive="active">Inneed Home</a>
-      <a routerLink="/search"  routerLinkActive="active">Advance Inneed Search</a>
-      <a routerLink="/detail"  routerLinkActive="active">Inneed Detail</a>
+      <a routerLink="/inneedhome" routerLinkActive="active">Home</a>
+  <!--    <a routerLink="/search"  routerLinkActive="active">Advance Inneed Search</a>
+      <a routerLink="/detail"  routerLinkActive="active">Inneed Detail</a> -->
     </nav>
     <router-outlet></router-outlet>
   `,
     styleUrls: ['./app.component.css'],
-    providers: [InneedCommonService]
+    providers: [DefaultService]
 })
 export class AppComponent {
     title = 'Inneed Indeed';

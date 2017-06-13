@@ -1,4 +1,4 @@
-export class Inneed {
+export class Person {
   id: number;
   name: string;
   area: string;
