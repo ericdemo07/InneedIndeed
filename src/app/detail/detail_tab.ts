@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'data-extract',
-    templateUrl: './inneeddetail.component.html',
-    styleUrls: ['./inneeddetail.component.css']
+    templateUrl: './detail_tab.html',
+    styleUrls: ['./detail_tab.css']
 })
 
 
-export class InneedDetailComponent {
+export class DetailComponent {
 }

@@ -11,7 +11,6 @@ import { PersonAsList } from '../_model/person_mock'
 @Injectable()
 export class DefaultService {
     getInneedAsList(): Promise<Person[]> {
-      return Promise.resolve(PersonAsList);
-
+        return Promise.resolve(PersonAsList);
     }
 }

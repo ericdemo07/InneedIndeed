@@ -3,12 +3,13 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule  }    from '@angular/forms';
 import { AppComponent }         from './app.component';
 import { HomeTabComponent }   from './home/home_tab';
+import { DetailComponent }   from './detail/detail_tab';
 import { AppRoutingModule }     from './app-routing.module';
-import { MyDateRangePickerModule } from 'mydaterangepicker';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 //import {enableProdMode} from '@angular/core';
 
@@ -19,17 +20,18 @@ import {MaterialModule} from '@angular/material';
         BrowserModule,
         FormsModule,
         AppRoutingModule,
-        MyDateRangePickerModule,
         HttpModule,
         JsonpModule,
         MaterialModule,
         BrowserAnimationsModule,
         NoopAnimationsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FlexLayoutModule
     ],
     declarations: [
         AppComponent,
-        HomeTabComponent
+        HomeTabComponent,
+        DetailComponent
     ],
     bootstrap: [AppComponent]
 })

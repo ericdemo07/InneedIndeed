@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DefaultService } from '../_services/default_service';
-// import { Inneed } from '../_model/person';
+import { Person } from '../_model/person';
 
 @Component({
     moduleId: module.id,
@@ -9,13 +9,12 @@ import { DefaultService } from '../_services/default_service';
 })
 
 export class HomeTabComponent {
-    constructor(private inneedCommonService: DefaultService) { }
-    // inneeduserlist: Inneed[];
-
-    // getHeroes(): void {
-    //     this.inneedCommonService.getInneedAsList().then(inneeduserlist => this.inneeduserlist = inneeduserlist);
-    // }
-    // ngOnInit(): void {
-    //     this.getHeroes();
-    // }
+    constructor(private defaultService: DefaultService) { }
+    listOfPerson: Person[];
+    getHeroes(): void {
+        this.defaultService.getInneedAsList().then(listOfPerson => this.listOfPerson = listOfPerson);
+    }
+    ngOnInit(): void {
+        this.getHeroes();
+    }
 }

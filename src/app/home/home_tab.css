@@ -1,21 +1,23 @@
-.bord {
+.tab-border {
     border-top-style: solid;
     border-top-width: thin;
     border-top-color: #607D8B;
 }
 
-.example-card {
-  width: 400px;
+.card-size {
+    width: 330px;
+    padding: 20px;
 }
 
 .example-header-image {
-  background-image: url('lib/img/inneed_img1.jpg');
-  background-size: cover;
-}
-/*.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948;
+    background-image: url('lib/img/inneed_img1.jpg');
+    background-size: cover;
 }
 
-.ng-invalid:not(form)  {
-  border-left: 5px solid #a94442;
-}*/
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
