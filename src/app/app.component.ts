@@ -11,7 +11,6 @@ import { DefaultService } from './_services/default_service';
     <h1>{{title}}</h1>
     <nav>
       <a routerLink="/hometab" routerLinkActive="active">Home</a>
-  <!--    <a routerLink="/search"  routerLinkActive="active">Advance Inneed Search</a> -->
       <a routerLink="/detail"  routerLinkActive="active">Detail</a>
     </nav>
     <router-outlet></router-outlet>

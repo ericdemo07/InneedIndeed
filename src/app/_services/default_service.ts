@@ -10,7 +10,12 @@ import { PersonAsList } from '../_model/person_mock'
 
 @Injectable()
 export class DefaultService {
-    getInneedAsList(): Promise<Person[]> {
-        return Promise.resolve(PersonAsList);
-    }
+
+  getInneedAsList(): Promise<Person[]> {
+    return Promise.resolve(PersonAsList);
+  }
+
+  getPerson(id: string): Promise<Person> {
+    return this.getInneedAsList().then(persons => persons.find(person => person.id === id));
+  }
 }

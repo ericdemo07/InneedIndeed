@@ -1,1 +1,71 @@
 <div class="tab-border"></div>
+<md-card class="card-margin">
+    <div *ngIf="person">
+        <form>
+            <md-input-container class="form-full-width">
+                <input mdInput placeholder="PersonId (disabled)" disabled value="23KW3M">
+            </md-input-container>
+            <table class="form-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="First name">
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="Last Name">
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <table class="form-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="City">
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="State">
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+                            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <md-input-container class="form-full-width">
+                    <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+                </md-input-container>
+                <md-input-container class="form-full-width">
+                    <textarea mdInput placeholder="Address 2"></textarea>
+                </md-input-container>
+            </p>
+            <table class="form-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="DonationAmount (disabled)" disabled value="19.99">
+                        </md-input-container>
+                    </td>
+                    <td>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="ground zero (disabled)" disabled>
+                        </md-input-container>
+                    </td>
+                </tr>
+            </table>
+            <md-input-container class="form-full-width">
+                <textarea mdInput placeholder="Biography" disabled>Loves kittens, snowboarding, and can type at 130 WPM.</textarea>
+            </md-input-container>
+        </form>
+    </div>
+</md-card>
+
+<button (click)="goBack()">Back</button>

@@ -1,24 +1,29 @@
 <div class="tab-border"></div>
 <div style="padding-top:20px;"></div>
 <md-toolbar color="primary">
-        <span>Top charts this week</span>
-        <span class="example-spacer"></span>
-        <md-icon class="example-icon">verified_user</md-icon>
+    <span>Top charts this week</span>
+    <span class="example-spacer"></span>
+    <md-icon class="example-icon">verified_user</md-icon>
 </md-toolbar>
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap">
-    <div *ngFor="let inneed of listOfPerson">
+    <div *ngFor="let person of listOfPerson">
         <div class="card-size">
             <md-card>
                 <md-card-header>
-                    <md-card-title>{{inneed.name}}</md-card-title>
-                    <md-card-subtitle>{{inneed.area}}</md-card-subtitle>
+                    <md-card-title>{{person.name}}</md-card-title>
+                    <md-card-subtitle>{{person.area}}</md-card-subtitle>
                 </md-card-header>
-                <img md-card-image src={{inneed.img}}>
+                <img md-card-image src={{person.img}}>
                 <md-card-content>
                     <p>
-                        {{inneed.content}}
+                        {{person.content}}
                     </p>
                 </md-card-content>
+                <md-card-actions>
+                    <button md-button>LIKE</button>
+                    <button md-button>SHARE</button>
+                    <button md-button [routerLink]="['/detail', person.id]">KnowMore</button>
+                </md-card-actions>
             </md-card>
         </div>
     </div>

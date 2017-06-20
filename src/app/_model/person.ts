@@ -1,7 +1,7 @@
 export class Person {
-  id: number;
+  id: string;
   name: string;
-  area: string;
+  postalCode: string;
   cols: number;
   rows: number;
   content: string;
