@@ -11,11 +11,10 @@ import { Person } from '../_model/person';
   styleUrls: ['./detail_tab.css']
 })
 
-
 export class DetailTabComponent {
 
   person: Person;
-
+  flag:boolean;
   constructor(
     private defaultService: DefaultService,
     private route: ActivatedRoute,
@@ -23,7 +22,7 @@ export class DetailTabComponent {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => {this.person = person});
+    this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => { this.person = person });
   }
 
   goBack(): void {

@@ -10,7 +10,8 @@ const routes: Routes = [
     // { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'hometab', component: HomeTabComponent },
     { path: 'detail/:id', component: DetailTabComponent },
-    { path: 'addnew', component: AddNewTabComponent }
+    { path: 'addnew', component: AddNewTabComponent },
+    { path: 'addnew/:id', component: AddNewTabComponent }
 ];
 
 @NgModule({

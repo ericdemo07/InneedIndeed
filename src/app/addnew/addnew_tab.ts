@@ -14,9 +14,11 @@ import {FormControl} from '@angular/forms';
 
 
 export class AddNewTabComponent {
-  person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '',null,null);
+  person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null);
   stateCtrl: FormControl;
   filteredStates: any;
+  private id: any;
+
   constructor(
     private defaultService: DefaultService,
     private route: ActivatedRoute,
@@ -29,7 +31,10 @@ export class AddNewTabComponent {
   }
 
   ngOnInit(): void {
-    //this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => {this.person = person});
+    this.route.params.subscribe(params => { this.id = params['id']; });
+    if (this.id != null) {
+      this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => { this.person = person });
+    }
   }
 
   goBack(): void {
