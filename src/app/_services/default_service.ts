@@ -1,10 +1,5 @@
 
 import { Injectable } from '@angular/core';
-import { Headers, RequestOptions, Http, Response  } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 import { Person } from '../_model/person';
 import { PersonAsList } from '../_model/person_mock'
 
@@ -16,6 +11,6 @@ export class DefaultService {
   }
 
   getPerson(id: string): Promise<Person> {
-    return this.getInneedAsList().then(persons => persons.find(person => person.id === id));
+    return this.getInneedAsList().then(persons => persons.find(person => person.getId() === id));
   }
 }

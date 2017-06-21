@@ -1,11 +1,43 @@
 export class Person {
-  id: string;
-  name: string;
-  postalCode: string;
-  cols: number;
-  rows: number;
-  content: string;
-  img: string;
+  constructor(
+    private id: string,
+    private firstName: string,
+    private lastName: string,
+    private city: string,
+    private state: string,
+    private postalCode: number,
+    private addressLine1: string,
+    private addressLine2: string,
+    private donationAmount: number,
+    private content: string,
+    private img: string,
+    private mailId: string,
+    private phone: number,
+    private representativeId: string,
+    private likesCount:number,
+    private shareCount:number,
+  ) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.city = city;
+    this.state = state;
+    this.postalCode = postalCode;
+    this.addressLine1 = addressLine1;
+    this.addressLine2 = addressLine2;
+    this.donationAmount = donationAmount;
+    this.content = content;
+    this.img = img;
+    this.mailId = mailId;
+    this.phone = phone;
+    this.representativeId = representativeId;
+    this.likesCount = likesCount;
+    this.shareCount = shareCount;
+  }
+  getId()
+  {
+    return this.id;
+  }
 }
 
-//        { id: 1, name: 'ZooZoo1', area: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img:'lib/img/inneed_img1.jpg'},
+//        { id: , name: 'ZooZoo', area: 'Area-9', cols: , rows: 2, content: 'This is a demo text will be replaced by original text in original.', img:'lib/img/inneed_img.jpg'},

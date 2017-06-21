@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { DefaultService } from '../_services/default_service';
@@ -12,7 +12,7 @@ import { Person } from '../_model/person';
 })
 
 
-export class DetailTabComponent implements OnInit {
+export class DetailTabComponent {
 
   person: Person;
 
@@ -23,9 +23,7 @@ export class DetailTabComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.switchMap((params: Params) => this.defaultService.getPerson('A1')).subscribe(person => this.person = person);
-    console.log(this.person);
-    console.log(this.defaultService.getPerson('A1'));
+    this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => {this.person = person});
   }
 
   goBack(): void {

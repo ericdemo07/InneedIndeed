@@ -1,71 +1,99 @@
 <div class="tab-border"></div>
 <md-card class="card-margin">
-    <div *ngIf="person">
-        <form>
+  <div *ngIf="person">
+    <form>
+      <md-input-container class="form-full-width">
+        <input mdInput placeholder="PersonId (disabled)" disabled value={{person.id}}>
+      </md-input-container>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
             <md-input-container class="form-full-width">
-                <input mdInput placeholder="PersonId (disabled)" disabled value="23KW3M">
+              <input mdInput placeholder="First Name" [(ngModel)]="person.firstName" name="person.firstName">
             </md-input-container>
-            <table class="form-full-width" cellspacing="0">
-                <tr>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput placeholder="First name">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput placeholder="Last Name">
-                        </md-input-container>
-                    </td>
-                </tr>
-            </table>
-            <table class="form-full-width" cellspacing="0">
-                <tr>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput placeholder="City">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput placeholder="State">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-                            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-                        </md-input-container>
-                    </td>
-                </tr>
-            </table>
-            <p>
-                <md-input-container class="form-full-width">
-                    <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-                </md-input-container>
-                <md-input-container class="form-full-width">
-                    <textarea mdInput placeholder="Address 2"></textarea>
-                </md-input-container>
-            </p>
-            <table class="form-full-width" cellspacing="0">
-                <tr>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput placeholder="DonationAmount (disabled)" disabled value="19.99">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container class="form-full-width">
-                            <input mdInput placeholder="ground zero (disabled)" disabled>
-                        </md-input-container>
-                    </td>
-                </tr>
-            </table>
+          </td>
+          <td>
             <md-input-container class="form-full-width">
-                <textarea mdInput placeholder="Biography" disabled>Loves kittens, snowboarding, and can type at 130 WPM.</textarea>
+              <input mdInput placeholder="Last Name" [(ngModel)]="person.lastName" name="person.lastName">
             </md-input-container>
-        </form>
-    </div>
+          </td>
+        </tr>
+      </table>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="City" [(ngModel)]="person.city" name="person.city">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="State" [(ngModel)]="person.state" name="person.state">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput #postalCode maxlength="6" placeholder="PostalCode" [(ngModel)]="person.postalCode" name="person.postalCode">
+              <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <md-input-container class="form-full-width">
+          <textarea mdInput placeholder="Address" [(ngModel)]="person.addressLine1" name="person.addressLine1"></textarea>
+        </md-input-container>
+        <md-input-container class="form-full-width">
+          <textarea mdInput placeholder="Address Line 2" [(ngModel)]="person.addressLine2" name="person.addressLine2"></textarea>
+        </md-input-container>
+      </p>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="DonationAmount (disabled)" [(ngModel)]="person.donationAmount" name="person.donationAmount">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Representative Id" [(ngModel)]="person.representativeId" name="person.representativeId">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+      <md-input-container class="form-full-width">
+        <textarea mdInput placeholder="About" [(ngModel)]="person.content" name="person.content"></textarea>
+      </md-input-container>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Mail Id" [(ngModel)]="person.mailId" name="person.mailId">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Phone" [(ngModel)]="person.phone" name="person.phone">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Liked By" [(ngModel)]="person.likesCount" name="person.likesCount">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Shared By" [(ngModel)]="person.shareCount" name="person.shareCount">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
 </md-card>
 
 <button (click)="goBack()">Back</button>

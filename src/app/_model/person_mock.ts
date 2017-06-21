@@ -2,58 +2,29 @@ import { Person } from './person';
 
 
 export const PersonAsList: Person[] = [
-    { id: 'A1', name: 'ZooZoo1', postalCode: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'A2', name: 'ZooZoo2', postalCode: 'Area-92', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'A3', name: 'ZooZoo3', postalCode: 'Area-93', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'A4', name: 'ZooZoo4', postalCode: 'Area-94', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'A5', name: 'ZooZoo5', postalCode: 'Area-95', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'A6', name: 'ZooZoo6', postalCode: 'Area-96', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'A7', name: 'ZooZoo7', postalCode: 'Area-97', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'A8', name: 'ZooZoo8', postalCode: 'Area-98', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'A9', name: 'ZooZoo9', postalCode: 'Area-99', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'B1', name: 'ZooZoo1', postalCode: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'B2', name: 'ZooZoo2', postalCode: 'Area-92', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'B3', name: 'ZooZoo3', postalCode: 'Area-93', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'B4', name: 'ZooZoo4', postalCode: 'Area-94', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'B5', name: 'ZooZoo5', postalCode: 'Area-95', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'B6', name: 'ZooZoo6', postalCode: 'Area-96', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'B7', name: 'ZooZoo7', postalCode: 'Area-97', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'B8', name: 'ZooZoo8', postalCode: 'Area-98', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'B9', name: 'ZooZoo9', postalCode: 'Area-99', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'C1', name: 'ZooZoo1', postalCode: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'C2', name: 'ZooZoo2', postalCode: 'Area-92', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'C3', name: 'ZooZoo3', postalCode: 'Area-93', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'C4', name: 'ZooZoo4', postalCode: 'Area-94', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'C5', name: 'ZooZoo5', postalCode: 'Area-95', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'C6', name: 'ZooZoo6', postalCode: 'Area-96', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'C7', name: 'ZooZoo7', postalCode: 'Area-97', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'C8', name: 'ZooZoo8', postalCode: 'Area-98', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'C9', name: 'ZooZoo9', postalCode: 'Area-99', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'D1', name: 'ZooZoo1', postalCode: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'D2', name: 'ZooZoo2', postalCode: 'Area-92', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'D3', name: 'ZooZoo3', postalCode: 'Area-93', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'D4', name: 'ZooZoo4', postalCode: 'Area-94', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'D5', name: 'ZooZoo5', postalCode: 'Area-95', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'D6', name: 'ZooZoo6', postalCode: 'Area-96', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'D7', name: 'ZooZoo7', postalCode: 'Area-97', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'D8', name: 'ZooZoo8', postalCode: 'Area-98', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'D9', name: 'ZooZoo9', postalCode: 'Area-99', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'E1', name: 'ZooZoo1', postalCode: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'E2', name: 'ZooZoo2', postalCode: 'Area-92', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'E3', name: 'ZooZoo3', postalCode: 'Area-93', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'E4', name: 'ZooZoo4', postalCode: 'Area-94', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'E5', name: 'ZooZoo5', postalCode: 'Area-95', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'E6', name: 'ZooZoo6', postalCode: 'Area-96', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'E7', name: 'ZooZoo7', postalCode: 'Area-97', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'E8', name: 'ZooZoo8', postalCode: 'Area-98', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'E9', name: 'ZooZoo9', postalCode: 'Area-99', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'F1', name: 'ZooZoo1', postalCode: 'Area-91', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'F2', name: 'ZooZoo2', postalCode: 'Area-92', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'F3', name: 'ZooZoo3', postalCode: 'Area-93', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'F4', name: 'ZooZoo4', postalCode: 'Area-94', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'F5', name: 'ZooZoo5', postalCode: 'Area-95', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'F6', name: 'ZooZoo6', postalCode: 'Area-96', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'F7', name: 'ZooZoo7', postalCode: 'Area-97', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' },
-    { id: 'F8', name: 'ZooZoo8', postalCode: 'Area-98', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img2.jpg' },
-    { id: 'F9', name: 'ZooZoo9', postalCode: 'Area-99', cols: 1, rows: 2, content: 'This is a demo text will be replaced by original text in original.', img: 'lib/img/inneed_img1.jpg' }
-];
+
+  new Person('A227K32',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com',918884873621,'#456FU5',23,4),
+
+  new Person('D257J50',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('F667K76',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('U565I90',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('C547H85',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('B227K32',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('M434I80',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('F989U64',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('D247J50',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('F557K76',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('U565R90',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4),
+
+  new Person('C577H85',  'Donald', 'Duck','NewJersey','Jersey',389292,'12th Cross, 29th Main','OxfordStreet, Phase-1',432321.03,'Tempting looks and brain of a jet. Can do a lot more than quack-quack','lib/img/inneed_img1.jpg','duck_donald@cortoonnetwork.com', 918884873621,'#456FU5',23,4)
+
+  ];
