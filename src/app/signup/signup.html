@@ -1,0 +1,102 @@
+<!-- <div class="tab-border"></div> -->
+<div style="padding-top:20px;"></div>
+
+<md-card class="card-margin">
+  <form>
+    <div *ngIf="flagSignUp; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <md-toolbar>SignUp Page</md-toolbar>
+    </ng-template>
+    <ng-template #elseBlock>
+      <md-toolbar>LogIn Page</md-toolbar>
+    </ng-template>
+    <div *ngIf="flagSignUp">
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="First Name" [(ngModel)]="user.firstName" name="user.firstName">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Last Name" [(ngModel)]="user.lastName" name="user.lastName">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="flagSignUp; then thenBlock3 else elseBlock3"></div>
+    <ng-template #thenBlock3>
+      <table class="form-full-width" cellspacing="1">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Mail Id" [(ngModel)]="user.mailId" name="user.mailId">
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Phone" [(ngModel)]="user.phone" name="user.phone">
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+    </ng-template>
+    <ng-template #elseBlock3>
+      <table class="form-full-width" cellspacing="1">
+        <md-input-container class="form-full-width">
+          <input mdInput placeholder="Email or mobile phone number" [(ngModel)]="user.mailId" name="user.mailId">
+        </md-input-container>
+      </table>
+    </ng-template>
+    <table class="form-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-input-container class="form-full-width">
+            <input mdInput placeholder="Password" [(ngModel)]="password1" name="password1">
+          </md-input-container>
+        </td>
+        <div *ngIf="flagSignUp">
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Retype password" [(ngModel)]="password2" name="password2">
+            </md-input-container>
+          </td>
+        </div>
+      </tr>
+    </table>
+    <div *ngIf="flagSignUp; then thenBlock1 else elseBlock1"></div>
+    <ng-template #thenBlock1>
+      <a md-raised-button (click)="goBack()" class="form-full-width">Continue</a>
+    </ng-template>
+    <ng-template #elseBlock1>
+      <a md-raised-button (click)="goBack()" class="form-full-width">Log In</a>
+    </ng-template>
+    <div *ngIf="flagSignUp; then thenBlock2 else elseBlock2"></div>
+    <ng-template #thenBlock2>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            Existing User
+          </td>
+          <td>
+            <a md-raised-button (click)="updateSignUpFalse()" class="form-full-width">Sign In</a>
+          </td>
+        </tr>
+      </table>
+    </ng-template>
+    <ng-template #elseBlock2>
+      <table class="form-full-width" cellspacing="0">
+        <tr>
+          <td>
+            New User
+          </td>
+          <td>
+            <a md-raised-button (click)="updateSignUpTrue()" class="form-full-width">Sign Up</a>
+          </td>
+        </tr>
+      </table>
+    </ng-template>
+  </form>
+</md-card>

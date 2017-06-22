@@ -7,10 +7,11 @@ import { DetailTabComponent }   from './detail/detail_tab';
 import { AddNewTabComponent }   from './addnew/addnew_tab';
 import { AppRoutingModule }     from './app-routing.module';
 import { HttpModule, JsonpModule } from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { SignUpComponent }   from './signup/signup';
 
 //import {enableProdMode} from '@angular/core';
 
@@ -33,7 +34,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
         AppComponent,
         HomeTabComponent,
         DetailTabComponent,
-        AddNewTabComponent
+        AddNewTabComponent,
+        SignUpComponent
     ],
     bootstrap: [AppComponent]
 })

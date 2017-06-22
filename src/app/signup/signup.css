@@ -1,0 +1,40 @@
+.tab-border {
+    border-top-style: solid;
+    border-top-width: thin;
+    border-top-color: #607D8B;
+}
+
+.card-size {
+    width: 330px;
+    padding: 20px;
+}
+
+.bar {
+  height: 5px;
+  font-size: 1em;
+}
+
+.example-header-image {
+    background-image: url('lib/img/inneed_img1.jpg');
+    background-size: cover;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.form-full-width {
+    width: 100%;
+}
+
+.card-margin {
+    width: 500px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+}
