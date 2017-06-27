@@ -1,4 +1,5 @@
 <div class="tab-border"></div>
+<!-- Note that the amount is in paise = 50 INR -- key secret-3LHpYOd9OHHSWFzhtrfT7JZz -->
 <md-card class="card-margin">
   <div *ngIf="person">
     <form>
@@ -100,6 +101,9 @@
           <td>
             <!-- <a md-raised-button routerLink="['./addnew', person.id]">Edit</a> -->
             <button md-raised-button [routerLink]="['/addnew', person.id]">Edit</button>
+          </td>
+          <td>
+            <button md-raised-button (click)="open()">Donate via RazorPay</button>
           </td>
         </tr>
       </table>

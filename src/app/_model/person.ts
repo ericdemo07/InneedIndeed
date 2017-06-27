@@ -34,9 +34,25 @@ export class Person {
     this.likesCount = likesCount;
     this.shareCount = shareCount;
   }
-  getId()
+
+  public getId()
   {
     return this.id;
+  }
+
+  public getFullName()
+  {
+    return this.firstName + " " + this.lastName;
+  }
+
+  public getImg()
+  {
+    return this.img;
+  }
+
+  public getMail()
+  {
+    return this.mailId;
   }
 }
 

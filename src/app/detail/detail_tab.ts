@@ -12,9 +12,8 @@ import { Person } from '../_model/person';
 })
 
 export class DetailTabComponent {
-
   person: Person;
-  flag:boolean;
+  flag: boolean;
   constructor(
     private defaultService: DefaultService,
     private route: ActivatedRoute,
@@ -24,7 +23,30 @@ export class DetailTabComponent {
   ngOnInit(): void {
     this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => { this.person = person });
   }
-
+  open(): void {
+    var options = {
+      "key": "rzp_test_IEjF0FvPW3jvgf",
+      "amount": "200000", // 2000 paise = INR 20
+      "name": this.person.getFullName(),
+      "description": "Purchase Description",
+      "image": "../../"+this.person.getImg(),
+      "handler": function(response: any) {
+        alert(response.razorpay_payment_id);
+      },
+      "prefill": {
+        "name": this.person.getFullName(),
+        "email": this.person.getMail()
+      },
+      "notes": {
+        "address": "Hello World"
+      },
+      "theme": {
+        "color": "#607D8B"
+      }
+    };
+    var rzp1 = new Razorpay(options); //this method is imported in index.html
+    rzp1.open();
+  }
   goBack(): void {
     this.location.back();
   }
