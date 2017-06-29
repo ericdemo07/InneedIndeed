@@ -2,29 +2,28 @@ var express = require('express');
 var fs = require('fs');
 var app = express();
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/myproject');
+var db = require('./util/db_conn');
+var save = require('./routes/addperson');
+var get = require('./routes/getperson');
+var update = require('./routes/updateperson');
 
-var Cat = mongoose.model('Cat', { name: String });
+db.connect_to_database();
 
-var kitty = new Cat({ name: 'Zildjian' });
-kitty.save(function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('meow');
-  }
-});
+//save.save();
+//get.get_all();
+//get.get_one('firstName','Chris');
+get.get_by_id('5954d09077f94929c49331c1');
+//update.update_one('5954d09077f94929c49331c1');
 
+
+/*Static fields*/
 app.use(express.static(__dirname + '/src'));
 app.use(bodyParser.json());
 
-
 app.get('/arrow/searchbrand', function(req, res) {
-	var brandName;
-	res.send(brandName);
+  var brandName;
+  res.send(brandName);
 });
-
 
 // load the single view file (angular will handle the page changes on the
 // front-end)

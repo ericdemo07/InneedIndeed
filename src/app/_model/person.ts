@@ -16,6 +16,7 @@ export class Person {
     private representativeId: string,
     private likesCount:number,
     private shareCount:number,
+    private dob:Date
   ) {
     this.id = id;
     this.firstName = firstName;
@@ -33,6 +34,7 @@ export class Person {
     this.representativeId = representativeId;
     this.likesCount = likesCount;
     this.shareCount = shareCount;
+    this.dob = dob;
   }
 
   public getId()
