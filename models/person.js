@@ -2,9 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var personSchema = new Schema({
-  _id: Object,
-  id: { type: String, required: true, unique: true},
+var person_schema = new Schema({
   firstName: String,
   lastName: String,
   city: String,
@@ -27,18 +25,10 @@ var personSchema = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var Person = mongoose.model('Person', personSchema);
-
-
-// custom method to add string to end of name
-// you can create more important methods like name validations or formatting
-// you can also do queries and find similar users
-// personSchema.methods.dudify = function() {
-//   // add some stuff to the users lastName
-//   this.lastName = this.lastName + '-dude';
-//
-//   return this.lastName;
-// };
+var person_save = mongoose.model('SavePerson', person_schema);
 
 // make this available to our users in our Node applications
-module.exports = Person;
+
+module.exports = {
+  person_save: person_save
+}

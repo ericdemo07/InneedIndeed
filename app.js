@@ -3,26 +3,31 @@ var fs = require('fs');
 var app = express();
 var bodyParser = require('body-parser');
 var db = require('./util/db_conn');
-var save = require('./routes/addperson');
-var get = require('./routes/getperson');
-var update = require('./routes/updateperson');
+var save = require('./dao/addperson');
+var get = require('./dao/getperson');
+var update = require('./dao/updateperson');
+var remove = require('./dao/deleteperson');
 
 db.connect_to_database();
 
-//save.save();
-//get.get_all();
-//get.get_one('firstName','Chris');
-get.get_by_id('5954d09077f94929c49331c1');
-//update.update_one('5954d09077f94929c49331c1');
+// save.save();
+// get.get_all();
+// get.get_one('firstName','Chris');
+// get.get_by_id('595617f17d0d182f140cad5e');
+// update.update_by_id('5955d6f8d5c9712ae85cc8af', 'city', 'uk');
+// update.update_many('firstName', 'Chris', 'Jordan');
+// remove.delete_many('firstName','Jordan');
+// remove.delete_by_id('5956160f7483cc29746e49f2');
 
 
 /*Static fields*/
 app.use(express.static(__dirname + '/src'));
 app.use(bodyParser.json());
 
-app.get('/arrow/searchbrand', function(req, res) {
-  var brandName;
-  res.send(brandName);
+app.post('/abc', function(req, res) {
+  console.log("Hello 111");
+  //var brandName;
+  res.send("s");
 });
 
 // load the single view file (angular will handle the page changes on the

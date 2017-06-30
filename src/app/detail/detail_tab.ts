@@ -44,8 +44,8 @@ export class DetailTabComponent {
         "color": "#607D8B"
       }
     };
-    var rzp1 = new Razorpay(options); //this method is imported in index.html
-    rzp1.open();
+  //  var rzp1 = new Razorpay(options); //this method is imported in index.html
+  //  rzp1.open();
   }
   goBack(): void {
     this.location.back();

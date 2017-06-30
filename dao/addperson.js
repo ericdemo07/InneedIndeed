@@ -1,8 +1,7 @@
 var Person = require('../models/person');
 var moment = require('moment');
 
-var dummy_person = new Person({
-  id: 'T469M64',
+var dummy_person = new Person.person_save({
   firstName: 'Chris',
   lastName: 'Logan',
   city: 'LasVegas City',

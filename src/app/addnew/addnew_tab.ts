@@ -14,7 +14,7 @@ import {FormControl} from '@angular/forms';
 
 
 export class AddNewTabComponent {
-  person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null);
+  person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
   stateCtrl: FormControl;
   filteredStates: any;
   private id: any;

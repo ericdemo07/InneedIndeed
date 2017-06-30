@@ -14,3 +14,12 @@ export class DefaultService {
     return this.getInneedAsList().then(persons => persons.find(person => person.getId() === id));
   }
 }
+
+
+// getInneedAsList(): Promise<any> {
+//   return this.http.post("/abc", "formTypeRequestData")
+//          .toPromise()
+//          .then()
+//          .catch();
+//   //return Promise.resolve(PersonAsList);
+// }
