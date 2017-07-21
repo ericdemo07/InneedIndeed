@@ -25,9 +25,9 @@ export class AddNewTabComponent {
     private location: Location
   ) {
     this.stateCtrl = new FormControl();
-    this.filteredStates = this.stateCtrl.valueChanges
-      .startWith(null)
-      .map(name => this.filterStates(name));
+    // this.filteredStates = this.stateCtrl.valueChanges
+    //   .startWith(null)
+    //   .map(name => this.filterStates(name));
   }
 
   ngOnInit(): void {
