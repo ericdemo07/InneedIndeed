@@ -12,9 +12,12 @@ export class HomeTabComponent {
   constructor(private defaultService: DefaultService) { }
   listOfPerson: Person[];
   getHeroes(): void {
-    this.defaultService.getInneedAsList().then(listOfPerson => this.listOfPerson = listOfPerson);
+    this.defaultService.getInneedAsList1().then(listOfPerson => this.listOfPerson = listOfPerson);
   }
   ngOnInit(): void {
     this.getHeroes();
+  }
+  test(): void{
+    this.defaultService.getInneedAsList();
   }
 }

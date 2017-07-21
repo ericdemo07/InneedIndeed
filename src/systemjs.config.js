@@ -53,6 +53,7 @@
       'typescript': 'npm:typescript@2.0.10/lib/typescript.js',
       'mydaterangepicker': 'npm:mydaterangepicker/bundles/mydaterangepicker.umd.js',
       '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/cdk': 'npm:@angular/cdk/bundles/cdk.umd.js',
       '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
       '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/flex-layout' : 'npm:@angular/flex-layout/bundles/flex-layout.umd.js',
