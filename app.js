@@ -10,7 +10,7 @@ var remove = require('./dao/deleteperson');
 
 db.connect_to_database();
 
-// save.save();
+ save.save();
 // get.get_all();
 // get.get_one('firstName','Chris');
 // get.get_by_id('595617f17d0d182f140cad5e');
