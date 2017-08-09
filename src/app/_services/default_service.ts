@@ -13,7 +13,7 @@ export class DefaultService {
     console.log("I am in service");
     return this.http.post("/abc", "formTypeRequestData")
       .toPromise()
-      .then(result => console.log(result))
+      .then(result => {var a = result.text();console.log(a)})
       .catch();
   }
   getInneedAsList1(): Promise<Person[]> {
