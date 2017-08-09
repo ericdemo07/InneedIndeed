@@ -10,8 +10,8 @@ var remove = require('./dao/deleteperson');
 
 db.connect_to_database();
 
- save.save();
-// get.get_all();
+ //save.save();
+ //get.get_all();
 // get.get_one('firstName','Chris');
 // get.get_by_id('595617f17d0d182f140cad5e');
 // update.update_by_id('5955d6f8d5c9712ae85cc8af', 'city', 'uk');

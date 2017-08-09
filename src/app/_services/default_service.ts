@@ -10,9 +10,10 @@ export class DefaultService {
   constructor(private http: Http) { }
 
   getInneedAsList(): Promise<any> {
+    console.log("I am in service");
     return this.http.post("/abc", "formTypeRequestData")
       .toPromise()
-      .then()
+      .then(result => console.log(result))
       .catch();
   }
   getInneedAsList1(): Promise<Person[]> {
