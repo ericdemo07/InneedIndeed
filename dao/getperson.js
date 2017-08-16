@@ -1,9 +1,9 @@
 var Person = require('../models/person');
 
-function get_all() {
-  Person.person_save.find({}, function(err, users) {
+function get_all(callback) {
+   Person.person_save.find({}, function(err, users) {
     if (err) throw err;
-    //console.log(users);
+    callback(err, users);
   });
 }
 
