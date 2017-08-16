@@ -20,7 +20,10 @@ export class HomeTabComponent {
   test(): void {
     this.defaultService.getInneedAsList().then(
       function(response) {
-        console.log(JSON.parse(response).message);
+        console.log("Hello test 111");
+        var myObjArray : Person[] = JSON.parse(response).message;
+        console.log(typeof myObjArray[0]);
+        console.log(typeof myObjArray[0].getFullName);
         //MapUtils.deserialize(Person, JSON.parse(response).message);
       });
   }
