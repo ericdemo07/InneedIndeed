@@ -17,7 +17,11 @@ export class HomeTabComponent {
   ngOnInit(): void {
     this.getHeroes();
   }
-  test(): void{
-    this.defaultService.getInneedAsList();
+  test(): void {
+    this.defaultService.getInneedAsList().then(
+      function(response) {
+        console.log(JSON.parse(response).message);
+        //MapUtils.deserialize(Person, JSON.parse(response).message);
+      });
   }
 }

@@ -13,7 +13,7 @@ export class DefaultService {
     console.log("I am in service");
     return this.http.post("/getall", "formTypeRequestData")
       .toPromise()
-      .then(result => {var a = result.text();console.log(a)})
+      .then(result => result.text())
       .catch();
   }
 
