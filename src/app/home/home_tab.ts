@@ -21,12 +21,14 @@ export class HomeTabComponent {
     this.defaultService.getInneedAsList().then(
       function(response) {
         //  console.log("Hello test  "+response);
-        var length = JSON.parse(response).message.length;
-        console.log("\n\n\nHello test 111 " + JSON.parse(response).message.length);
+        var length = response.message.length;
+        //console.log("\n\n\nHello test 111 " + JSON.parse(response).message.length);
+        console.log("\n\n" + 0 + "\n\n" + response.message.length);
         for (var i = 0; i < length; i++) {
           //this.listOfPerson[i] = JSON.parse(response).message[i];
-          console.log("\n\n" + i + "\n\n" + JSON.parse(response).message[i]);
+          console.log("\n\n" + i + "\n\n" + JSON.stringify(response.message[i]));
         }
+
         //next line nopt giving expected result have to use setters
         //    var myObjArray : Person[] = JSON.parse(response).message;
         //  console.log(myObjArray[0]);
