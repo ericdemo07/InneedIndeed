@@ -9,28 +9,18 @@ export class DefaultService {
 
   constructor(private http: Http) { }
 
-  getInneedAsList(): Promise<any> {
-    console.log("I am in service");
+  getListOfPerson(): Promise<any> {
     return this.http.post("/getall", "formTypeRequestData")
       .toPromise()
       .then(result => result.json())
       .catch();
   }
 
-  getInneedAsList1(): Promise<Person[]> {
+  getListOfPersonFromLocal(): Promise<Person[]> {
     return Promise.resolve(PersonAsList);
   }
 
   getPerson(id: string): Promise<Person> {
-    return this.getInneedAsList().then(persons => persons.find((person: any) => person.getId() === id));
+    return this.getListOfPersonFromLocal().then(persons => persons.find((person: any) => person.getId() === id));
   }
 }
-
-
-// getInneedAsList(): Promise<any> {
-//   return this.http.post("/abc", "formTypeRequestData")
-//          .toPromise()
-//          .then()
-//          .catch();
-//   //return Promise.resolve(PersonAsList);
-// }
