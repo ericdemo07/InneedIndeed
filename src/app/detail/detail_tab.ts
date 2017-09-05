@@ -21,7 +21,7 @@ export class DetailTabComponent {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => { this.person = person });
+    this.route.params.switchMap((params: Params) => this.defaultService.getPersonById(params['id'])).subscribe(person => { this.person = person });
   }
   open(): void {
     var options = {

@@ -7,6 +7,8 @@ var save = require('./dao/addperson');
 var get = require('./dao/getperson');
 var update = require('./dao/updateperson');
 var remove = require('./dao/deleteperson');
+var util = require('util')
+var url  = require('url');
 
 db.connect_to_database();
 
@@ -25,7 +27,7 @@ app.use(express.static(__dirname + '/src'));
 app.use(bodyParser.json());
 
 app.post('/getall', function(req, res) {
-  console.log("Hello 111");
+  console.log("fetching all person records from database ["+req);
   get.get_all(function(err, user) {
     if (err) {
       console.log(err);
@@ -35,6 +37,29 @@ app.post('/getall', function(req, res) {
     });
   });
 });
+
+
+app.get('/get_by_id/11', function(req, res) {
+  var url_parts = url.parse(req.url, true);
+  console.log(url_parts); //{Object}
+  var query = url_parts.query;
+
+  console.log("fetching person from db based on id ["+req);
+
+  for(k in req)
+  {
+
+  }
+  get.get_by_id(function(err, user) {
+    if (err) {
+      console.log(err);
+    }
+    res.send({
+      message: user
+    });
+  });
+});
+
 
 // load the single view file (angular will handle the page changes on the
 // front-end)
