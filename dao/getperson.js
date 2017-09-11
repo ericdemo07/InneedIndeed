@@ -19,7 +19,7 @@ function get_one(type, value) {
   });
 }
 
-function get_by_id(callback,id) {
+function get_by_id(id,callback) {
   Person.person_save.findById(id, function(err, user) {
     if (err) throw err;
     callback(err, user);

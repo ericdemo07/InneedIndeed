@@ -30,11 +30,9 @@ export class DefaultService {
   }
 
   getPersonById(id: string): Promise<any> {
-    let params: URLSearchParams = new URLSearchParams();
-    params.set('appid', "blank");
-    return this.http.get("/get_by_id/11",{ search: params })
+    return this.http.get("/get_by_id/"+id)
       .toPromise()
-      .then(result => {console.log(result.json())})
+      .then(result => result.json())
       .catch();
   }
 

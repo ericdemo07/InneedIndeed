@@ -39,18 +39,9 @@ app.post('/getall', function(req, res) {
 });
 
 
-app.get('/get_by_id/11', function(req, res) {
-  var url_parts = url.parse(req.url, true);
-  console.log(url_parts); //{Object}
-  var query = url_parts.query;
-
-  console.log("fetching person from db based on id ["+req);
-
-  for(k in req)
-  {
-
-  }
-  get.get_by_id(function(err, user) {
+app.get('/get_by_id/:id', function(req, res) {
+  console.log("fetching record based on id");
+  get.get_by_id(req.params.id,function(err, user) {
     if (err) {
       console.log(err);
     }
