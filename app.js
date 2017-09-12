@@ -1,5 +1,4 @@
 var express = require('express');
-var fs = require('fs');
 var app = express();
 var bodyParser = require('body-parser');
 var db = require('./util/db_conn');
@@ -8,7 +7,6 @@ var get = require('./dao/getperson');
 var update = require('./dao/updateperson');
 var remove = require('./dao/deleteperson');
 var util = require('util')
-var url  = require('url');
 
 db.connect_to_database();
 

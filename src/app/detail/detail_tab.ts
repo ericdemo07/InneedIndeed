@@ -12,7 +12,7 @@ import { Person } from '../_model/person';
 })
 
 export class DetailTabComponent {
-  person: Person;
+  person: any;
   flag: boolean;
   constructor(
     private defaultService: DefaultService,
@@ -23,20 +23,24 @@ export class DetailTabComponent {
   ngOnInit(): void {
     this.route.params.switchMap((params: Params) => this.defaultService.getPersonById(params['id'])).subscribe(person => this.person = person.message );
   }
-  
+
   open(): void {
+    var person = 	new Person(this.person._id, this.person.firstName, this.person.lastName, this.person.city, this.person.state,
+            this.person.postalCode, this.person.addressLine1, this.person.addressLine2, this.person.donationAmount,
+            this.person.content, this.person.img, this.person.mailId, this.person.phone,
+            this.person.representativeId, this.person.likesCount, this.person.shareCount, this.person.dob);
     var options = {
       "key": "rzp_test_IEjF0FvPW3jvgf",
       "amount": "200000", // 2000 paise = INR 20
-      "name": this.person.getFullName(),
-      "description": "Purchase Description",
-      "image": "../../"+this.person.getImg(),
+      "name": person.getFullName(),
+      "description": "Donation for upliftment of society",
+      "image": "../../"+person.getImg(),
       "handler": function(response: any) {
         alert(response.razorpay_payment_id);
       },
       "prefill": {
-        "name": this.person.getFullName(),
-        "email": this.person.getMail()
+        "name": person.getFullName(),
+        "email": person.getMail()
       },
       "notes": {
         "address": "Hello World"
