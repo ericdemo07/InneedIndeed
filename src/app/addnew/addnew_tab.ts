@@ -1,10 +1,10 @@
 import 'rxjs/add/operator/switchMap';
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { DefaultService } from '../_services/default_service';
 import { Person } from '../_model/person';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +14,7 @@ import {FormControl} from '@angular/forms';
 
 
 export class AddNewTabComponent {
-  person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
+  person:Person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
   stateCtrl: FormControl;
   filteredStates: any;
   private id: any;
@@ -32,8 +32,19 @@ export class AddNewTabComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => { this.id = params['id']; });
+    console.log("in edit phase for id [" + this.id);
     if (this.id != null) {
-      this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id'])).subscribe(person => { this.person = person });
+      this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id']).then(
+        function(response) {
+          var temp: Person;
+          var person = response.message;
+          temp = new Person(person._id, person.firstName, person.lastName, person.city, person.state,
+            person.postalCode, person.addressLine1, person.addressLine2, person.donationAmount,
+            person.content, person.img, person.mailId, person.phone,
+            person.representativeId, person.likesCount, person.shareCount, person.dob);
+          return temp;
+        }
+      )).subscribe(person => this.person = person);
     }
   }
 

@@ -20,13 +20,9 @@ export class DefaultService {
     return Promise.resolve(PersonAsList);
   }
 
-  getPerson(id: string): Promise<Person> {
-    return this.getListOfPerson().then(
-      function(response) {
-        var a: Person;
-        console.log(response);
-        return a;
-      });
+  getPerson(id: string): Promise<any> {
+    return this.getPersonById(id).then(result => result)
+    .catch();
   }
 
   getPersonById(id: string): Promise<any> {

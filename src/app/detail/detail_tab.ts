@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/switchMap';
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { DefaultService } from '../_services/default_service';
@@ -21,26 +21,32 @@ export class DetailTabComponent {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.switchMap((params: Params) => this.defaultService.getPersonById(params['id'])).subscribe(person => this.person = person.message );
+    this.route.params.switchMap((params: Params) => this.defaultService.getPersonById(params['id']).then(
+      function(response) {
+        var temp: Person;
+        var person = response.message;
+        temp = new Person(person._id, person.firstName, person.lastName, person.city, person.state,
+          person.postalCode, person.addressLine1, person.addressLine2, person.donationAmount,
+          person.content, person.img, person.mailId, person.phone,
+          person.representativeId, person.likesCount, person.shareCount, person.dob);
+        return temp;
+      }
+    )).subscribe(person => this.person = person);
   }
 
   open(): void {
-    var person = 	new Person(this.person._id, this.person.firstName, this.person.lastName, this.person.city, this.person.state,
-            this.person.postalCode, this.person.addressLine1, this.person.addressLine2, this.person.donationAmount,
-            this.person.content, this.person.img, this.person.mailId, this.person.phone,
-            this.person.representativeId, this.person.likesCount, this.person.shareCount, this.person.dob);
     var options = {
       "key": "rzp_test_IEjF0FvPW3jvgf",
       "amount": "200000", // 2000 paise = INR 20
-      "name": person.getFullName(),
+      "name": this.person.getFullName(),
       "description": "Donation for upliftment of society",
-      "image": "../../"+person.getImg(),
+      "image": "../../" + this.person.getImg(),
       "handler": function(response: any) {
         alert(response.razorpay_payment_id);
       },
       "prefill": {
-        "name": person.getFullName(),
-        "email": person.getMail()
+        "name": this.person.getFullName(),
+        "email": this.person.getMail()
       },
       "notes": {
         "address": "Hello World"
@@ -49,8 +55,8 @@ export class DetailTabComponent {
         "color": "#607D8B"
       }
     };
-  //  var rzp1 = new Razorpay(options); //this method is imported in index.html
-  //  rzp1.open();
+    //  var rzp1 = new Razorpay(options); //this method is imported in index.html
+    //  rzp1.open();
   }
   goBack(): void {
     this.location.back();
