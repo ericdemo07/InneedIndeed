@@ -49,6 +49,20 @@ app.get('/get_by_id/:id', function(req, res) {
   });
 });
 
+app.post('/save_by_id', function(req, res) {
+  console.log("saving record based on id");
+  console.log(req);
+  console.log("\n\n ["+req.body);
+
+  // save.update_by_id(req.params.id,function(err, user) {
+  //   if (err) {
+  //     console.log(err);
+  //   }
+  //   res.send({
+  //     message: user
+  //   });
+  // });
+});
 
 // load the single view file (angular will handle the page changes on the
 // front-end)

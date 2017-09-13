@@ -14,7 +14,7 @@ import { FormControl } from '@angular/forms';
 
 
 export class AddNewTabComponent {
-  person:Person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
+  person: Person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
   stateCtrl: FormControl;
   filteredStates: any;
   private id: any;
@@ -49,6 +49,12 @@ export class AddNewTabComponent {
   }
 
   goBack(): void {
+    this.location.back();
+  }
+
+  savePersonDeatils(): void {
+    var person = new Person('59a52b11c980a3282c2449bc', 'ayush', 'shukla', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
+    this.defaultService.savePersonDeatils(person);
     this.location.back();
   }
 

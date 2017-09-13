@@ -32,6 +32,17 @@ export class DefaultService {
       .catch();
   }
 
+  savePersonDeatils(ob: Person): Promise<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let obAsJson = JSON.stringify(ob);
+
+    return this.http.post("/save_by_id","{a:'ayush'}",options)
+      .toPromise()
+      .then(result => result.json())
+      .catch();
+  }
+
 }
 
 

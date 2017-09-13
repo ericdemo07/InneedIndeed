@@ -7,7 +7,7 @@ import { SignUpComponent }   from './signup/signup';
 
 
 const routes: Routes = [
-    // { path: '', redirectTo: '/search', pathMatch: 'full' },
+     { path: '', redirectTo: '/hometab', pathMatch: 'full' },
     { path: 'hometab', component: HomeTabComponent },
     { path: 'detail/:id', component: DetailTabComponent },
     { path: 'addnew', component: AddNewTabComponent },
