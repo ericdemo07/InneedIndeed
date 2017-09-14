@@ -53,8 +53,7 @@ export class AddNewTabComponent {
   }
 
   savePersonDeatils(): void {
-    var person = new Person('59a52b11c980a3282c2449bc', 'ayush', 'shukla', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
-    this.defaultService.savePersonDeatils(person);
+    this.defaultService.savePersonDeatils(this.person);
     this.location.back();
   }
 

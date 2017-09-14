@@ -37,7 +37,7 @@ export class DefaultService {
     let options = new RequestOptions({ headers: headers });
     let obAsJson = JSON.stringify(ob);
 
-    return this.http.post("/save_by_id","{a:'ayush'}",options)
+    return this.http.post("/save_by_id",ob,options)
       .toPromise()
       .then(result => result.json())
       .catch();

@@ -105,7 +105,8 @@ var dummy_person5 = new Person.person_save({
   created_at: moment('2017-06-22').format('YYYY-MM-DD'),
   updated_at: new Date()
 });
-function save() {
+
+function save1() {
   dummy_person1.save(function(err) {
     if (err) {
       console.log(err);
@@ -140,6 +141,34 @@ function save() {
     } else {
       console.log('User added');
     }
+  });
+}
+
+function save(ob) {
+  var obAsObject = new Person.person_save({
+    firstName: ob['firstName'],
+    lastName: ob['lastName'],
+    city: ob['city'],
+    state: ob['state'],
+    postalCode: 223322,
+    addressLine1: ob['addressLine1'],
+    addressLine2: ob['addressLine2'],
+    donationAmount: ob['donationAmount'],
+    content: ob['content'],
+    img: ob['img'],
+    mailId: ob['mailId'],
+    phone: 8884873621,
+    representativeId: ob['representativeId'],
+    likesCount: 111,
+    shareCount: 1,
+    dob: moment('2013-06-22').format('YYYY-MM-DD'), //have to add into ui
+    created_at: new Date(),
+    updated_at: new Date()
+  });
+
+  obAsObject.save(function(err,user) {
+    if (err) throw err;
+    console.log('User added ['+user);
   });
 }
 
