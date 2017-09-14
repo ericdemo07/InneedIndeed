@@ -25,7 +25,6 @@ function update_by_id(ob) {
   };
   Person.person_save.findByIdAndUpdate(id, updateObject, function(err, user) {
     if (err) throw err;
-    console.log(user);
   });
 }
 

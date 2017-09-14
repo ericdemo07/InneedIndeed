@@ -10,6 +10,9 @@
           </md-input-container>
         </td>
         <td>
+          &nbsp;&nbsp;
+        </td>
+        <td>
           <md-input-container class="form-full-width">
             <input mdInput placeholder="Last Name" [(ngModel)]="person.lastName" name="person.lastName">
           </md-input-container>
@@ -24,6 +27,9 @@
           </md-input-container>
         </td>
         <td>
+          &nbsp;&nbsp;
+        </td>
+        <td>
           <md-input-container>
             <input mdInput placeholder="State" [mdAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="person.state" name="person.state">
           </md-input-container>
@@ -32,6 +38,9 @@
               {{ state }}
             </md-option>
           </md-autocomplete>
+        </td>
+        <td>
+          &nbsp;&nbsp;
         </td>
         <td>
           <md-input-container class="form-full-width">
@@ -43,7 +52,7 @@
     </table>
     <p>
       <md-input-container class="form-full-width">
-        <textarea mdInput placeholder="Address" [(ngModel)]="person.addressLine1" name="person.addressLine1"></textarea>
+        <textarea mdInput placeholder="Address Line 1" [(ngModel)]="person.addressLine1" name="person.addressLine1"></textarea>
       </md-input-container>
       <md-input-container class="form-full-width">
         <textarea mdInput placeholder="Address Line 2" [(ngModel)]="person.addressLine2" name="person.addressLine2"></textarea>
@@ -67,7 +76,9 @@
       <textarea mdInput placeholder="About" [(ngModel)]="person.content" name="person.content"></textarea>
     </md-input-container>
     <br>
+    <br>
       placehoder for datepicker
+    <br>
     <br>
     <table class="form-full-width" cellspacing="0">
       <tr>
@@ -75,6 +86,9 @@
           <md-input-container class="form-full-width">
             <input mdInput placeholder="Mail Id" [(ngModel)]="person.mailId" name="person.mailId">
           </md-input-container>
+        </td>
+        <td>
+          &nbsp;&nbsp;
         </td>
         <td>
           <md-input-container class="form-full-width">

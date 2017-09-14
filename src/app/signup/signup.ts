@@ -9,9 +9,8 @@ import { User } from '../_model/user';
 })
 
 export class SignUpComponent {
-  user = new User('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null);
-  password1: string = '';
-  password2: string = '';
+  user = new User('', '', '', '', null, '');
+  passwordformatch: string = '';
   flagSignUp: boolean = false;
 
   constructor(private defaultService: DefaultService) { }
@@ -22,5 +21,19 @@ export class SignUpComponent {
 
   updateSignUpFalse() {
     this.flagSignUp = false;
+  }
+
+  signup() {
+
+    if(this.passwordformatch == this.user.getPassword())
+    {
+      
+    }
+
+
+  }
+
+  login() {
+
   }
 }

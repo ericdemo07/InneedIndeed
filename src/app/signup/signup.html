@@ -19,6 +19,9 @@
             </md-input-container>
           </td>
           <td>
+            &nbsp;&nbsp;
+          </td>
+          <td>
             <md-input-container class="form-full-width">
               <input mdInput placeholder="Last Name" [(ngModel)]="user.lastName" name="user.lastName">
             </md-input-container>
@@ -34,6 +37,9 @@
             <md-input-container class="form-full-width">
               <input mdInput placeholder="Mail Id" [(ngModel)]="user.mailId" name="user.mailId">
             </md-input-container>
+          </td>
+          <td>
+            &nbsp;&nbsp;
           </td>
           <td>
             <md-input-container class="form-full-width">
@@ -54,13 +60,16 @@
       <tr>
         <td>
           <md-input-container class="form-full-width">
-            <input mdInput placeholder="Password" [(ngModel)]="password1" name="password1">
+            <input mdInput placeholder="Password" type="password" [(ngModel)]="user.password" name="user.password">
           </md-input-container>
+        </td>
+        <td>
+          &nbsp;&nbsp;
         </td>
         <div *ngIf="flagSignUp">
           <td>
             <md-input-container class="form-full-width">
-              <input mdInput placeholder="Retype password" [(ngModel)]="password2" name="password2">
+              <input mdInput placeholder="Retype password" type="password" [(ngModel)]="passwordformatch" name="passwordformatch">
             </md-input-container>
           </td>
         </div>
@@ -68,17 +77,19 @@
     </table>
     <div *ngIf="flagSignUp; then thenBlock1 else elseBlock1"></div>
     <ng-template #thenBlock1>
-      <a md-raised-button (click)="goBack()" class="form-full-width">Continue</a>
+      <a md-raised-button (click)="signup()" class="form-full-width">Continue</a>
     </ng-template>
     <ng-template #elseBlock1>
-      <a md-raised-button (click)="goBack()" class="form-full-width">Log In</a>
+      <a md-raised-button (click)="login()" class="form-full-width">Log In</a>
     </ng-template>
     <div *ngIf="flagSignUp; then thenBlock2 else elseBlock2"></div>
+
     <ng-template #thenBlock2>
+      <br><br>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            Existing User
+            <md-toolbar class="size-decrease">Existing User</md-toolbar>
           </td>
           <td>
             <a md-raised-button (click)="updateSignUpFalse()" class="form-full-width">Sign In</a>
@@ -87,10 +98,11 @@
       </table>
     </ng-template>
     <ng-template #elseBlock2>
+      <br><br>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            New User
+            <md-toolbar class="size-decrease">New User</md-toolbar>
           </td>
           <td>
             <a md-raised-button (click)="updateSignUpTrue()" class="form-full-width">Sign Up</a>

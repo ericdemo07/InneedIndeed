@@ -12,6 +12,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SignUpComponent }   from './signup/signup';
+// import {enableProdMode} from '@angular/core';
+// enableProdMode();
 
 //import {enableProdMode} from '@angular/core';
 

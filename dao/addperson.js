@@ -168,7 +168,6 @@ function save(ob) {
 
   obAsObject.save(function(err,user) {
     if (err) throw err;
-    console.log('User added ['+user);
   });
 }
 
