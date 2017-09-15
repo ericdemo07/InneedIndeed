@@ -2,15 +2,16 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var db = require('./util/db_conn');
-var save = require('./dao/addperson');
+var saveperson = require('./dao/addperson');
+var saveuser = require('./dao/adduser');
 var get = require('./dao/getperson');
-var update = require('./dao/updateperson');
+var updateperson = require('./dao/updateperson');
 var remove = require('./dao/deleteperson');
 var util = require('util')
 
 db.connect_to_database();
 
-//save.save();
+//saveuser.save1();
 //get.get_all();
 // get.get_one('firstName','Chris');
 // get.get_by_id('595617f17d0d182f140cad5e');
@@ -53,7 +54,7 @@ app.post('/save_by_id', function(req, res) {
   console.log("saving record based on id");
   console.log("\n\n [" + req.body);
   if (req.body['id'] === null || req.body['id'] === "") {
-    save.save(req.body, function(err, user) {
+    saveperson.save(req.body, function(err, user) {
       if (err) {
         console.log(err);
       }
@@ -61,7 +62,7 @@ app.post('/save_by_id', function(req, res) {
         message: user
       });
     });  } else {
-    update.update_by_id(req.body, function(err, user) {
+    updateperson.update_by_id(req.body, function(err, user) {
       if (err) {
         console.log(err);
       }
@@ -70,6 +71,33 @@ app.post('/save_by_id', function(req, res) {
       });
     });
   }
+});
+
+app.post('/login_signup', function(req, res) {
+  console.log("\n\nlogin check");
+  console.log("req [" + req.body);
+  for(key in req.body)
+  {
+    console.log(req.body[key]);
+  }
+  // if (req.body['id'] === null || req.body['id'] === "") {
+  //   saveperson.save(req.body, function(err, user) {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //     res.send({
+  //       message: user
+  //     });
+  //   });  } else {
+  //   updateperson.update_by_id(req.body, function(err, user) {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //     res.send({
+  //       message: user
+  //     });
+  //   });
+  // }
 });
 
 // load the single view file (angular will handle the page changes on the

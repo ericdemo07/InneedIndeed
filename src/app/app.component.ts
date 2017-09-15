@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { DefaultService } from './_services/default_service';
+import { LoginService } from './_services/login_service';
 import { Router } from '@angular/router'
 
 @Component({
@@ -29,7 +30,8 @@ import { Router } from '@angular/router'
        <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css'],
-  providers: [DefaultService]
+  providers: [DefaultService,
+    LoginService]
 })
 export class AppComponent {
   title = 'YellowPages';

@@ -14,12 +14,26 @@ export class User {
     this.phone = phone;
     this.password = password;
   }
-  getId()
-  {
+
+  getId() {
     return this.id;
   }
-  getPassword()
-  {
+
+  getPassword() {
     return this.password;
   }
+
+  getMailId() {
+    return this.mailId;
+  }
+
+  getPhone() {
+    return this.phone;
+  }
+
+  setPhone(phone: String) {
+    this.phone = +phone;
+    this.mailId = '';
+  }
+
 }
