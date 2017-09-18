@@ -27,7 +27,7 @@ export class SignUpComponent {
     if (this.passwordformatch != this.user.getPassword()) {
       console.log("password mismatch");
     }
-    else{
+    else {
       this.loginService.matchUser(this.user);
     }
   }
@@ -44,7 +44,7 @@ export class SignUpComponent {
 
   }
 
-  isNumeric(value:any) {
+  isNumeric(value: any) {
     return /^\d+$/.test(value);
   }
 }

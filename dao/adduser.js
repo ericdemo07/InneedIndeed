@@ -58,7 +58,7 @@ function save(ob) {
   });
 }
 
-function login_signup(ob) {
+function login_signup(ob, callback) {
   if (ob['firstName']) {
     console.log("\n\n is in signup mode [" + ob['firstName']);
     save(ob);
@@ -76,12 +76,9 @@ function login_signup(ob) {
       };
     }
     console.log("\n\n is in signup mode with [" + input);
-    for (key in input) {
-      console.log(key + " [" + input[key]);
-    }
     User.user_save.find(input, function(err, user) {
       if (err) throw err;
-      console.log(user);
+      callback(err, user);
     });
   }
 }

@@ -76,11 +76,15 @@ app.post('/save_by_id', function(req, res) {
 
 app.post('/login_signup', function(req, res) {
   console.log("\n\nlogin check");
-  console.log("req [" + req.body);
-  for (key in req.body) {
-    console.log(key + " [" + req.body[key]);
-  }
-  saveuser.login_signup(req.body);
+  saveuser.login_signup(req.body, function(err, user) {
+    if (err) {
+      console.log(err);
+    }
+    res.send({
+      message: user
+    });
+  });
+  //saveuser.login_signup(req.body);
 });
 
 // load the single view file (angular will handle the page changes on the
