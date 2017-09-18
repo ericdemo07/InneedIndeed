@@ -61,7 +61,8 @@ app.post('/save_by_id', function(req, res) {
       res.send({
         message: user
       });
-    });  } else {
+    });
+  } else {
     updateperson.update_by_id(req.body, function(err, user) {
       if (err) {
         console.log(err);
@@ -76,28 +77,10 @@ app.post('/save_by_id', function(req, res) {
 app.post('/login_signup', function(req, res) {
   console.log("\n\nlogin check");
   console.log("req [" + req.body);
-  for(key in req.body)
-  {
-    console.log(req.body[key]);
+  for (key in req.body) {
+    console.log(key + " [" + req.body[key]);
   }
-  // if (req.body['id'] === null || req.body['id'] === "") {
-  //   saveperson.save(req.body, function(err, user) {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //     res.send({
-  //       message: user
-  //     });
-  //   });  } else {
-  //   updateperson.update_by_id(req.body, function(err, user) {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //     res.send({
-  //       message: user
-  //     });
-  //   });
-  // }
+  saveuser.login_signup(req.body);
 });
 
 // load the single view file (angular will handle the page changes on the

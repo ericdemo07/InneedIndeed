@@ -27,6 +27,9 @@ export class SignUpComponent {
     if (this.passwordformatch != this.user.getPassword()) {
       console.log("password mismatch");
     }
+    else{
+      this.loginService.matchUser(this.user);
+    }
   }
 
   login() {

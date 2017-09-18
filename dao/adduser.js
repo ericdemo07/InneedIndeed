@@ -15,7 +15,7 @@ var dummy_user2 = new User.user_save({
   firstName: 'Sachin',
   lastName: 'Bansal',
   mailId: 'sachinb@yahoo.com',
-  phone: 2342545443,
+  phone: 2342549885665,
   password: '44445555',
   created_at: new Date(),
   updated_at: new Date()
@@ -40,7 +40,7 @@ function save1() {
 }
 
 function save(ob) {
-  var obAsObject = new Person.person_save({
+  var obAsObject = new User.user_save({
     firstName: ob['firstName'],
     lastName: ob['lastName'],
     mailId: ob['mailId'],
@@ -49,10 +49,44 @@ function save(ob) {
     created_at: new Date(),
     updated_at: new Date()
   });
-
-  obAsObject.save(function(err,user) {
-    if (err) throw err;
+  obAsObject.save(function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('User added');
+    }
   });
 }
 
-exports.save1 = save1
+function login_signup(ob) {
+  if (ob['firstName']) {
+    console.log("\n\n is in signup mode [" + ob['firstName']);
+    save(ob);
+  } else {
+    var input;
+    if (ob['mailId']) {
+      input = {
+        mailId: ob['mailId'],
+        password: ob['password']
+      };
+    } else {
+      input = {
+        phone: ob['phone'],
+        password: ob['password']
+      };
+    }
+    console.log("\n\n is in signup mode with [" + input);
+    for (key in input) {
+      console.log(key + " [" + input[key]);
+    }
+    User.user_save.find(input, function(err, user) {
+      if (err) throw err;
+      console.log(user);
+    });
+  }
+}
+
+module.exports = {
+  save1: save1,
+  login_signup: login_signup
+}
