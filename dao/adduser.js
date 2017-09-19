@@ -39,7 +39,7 @@ function save1() {
   });
 }
 
-function save(ob) {
+function save(ob, callback) {
   var obAsObject = new User.user_save({
     firstName: ob['firstName'],
     lastName: ob['lastName'],
@@ -54,6 +54,7 @@ function save(ob) {
       console.log(err);
     } else {
       console.log('User added');
+      callback(err, 'User added');
     }
   });
 }
@@ -61,7 +62,12 @@ function save(ob) {
 function login_signup(ob, callback) {
   if (ob['firstName']) {
     console.log("\n\n is in signup mode [" + ob['firstName']);
-    save(ob);
+    save(ob, function(err, user) {
+      if (err) {
+        console.log(err);
+      }
+      callback(err, user);
+    });
   } else {
     var input;
     if (ob['mailId']) {
