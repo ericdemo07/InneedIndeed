@@ -11,7 +11,7 @@ var util = require('util')
 
 db.connect_to_database();
 
-//saveuser.save1();
+saveperson.save1();
 //get.get_all();
 // get.get_one('firstName','Chris');
 // get.get_by_id('595617f17d0d182f140cad5e');
@@ -22,7 +22,7 @@ db.connect_to_database();
 
 
 /*Static fields*/
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/dist'));
 app.use(bodyParser.json());
 
 app.post('/getall', function(req, res) {

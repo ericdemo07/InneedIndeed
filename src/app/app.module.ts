@@ -9,9 +9,15 @@ import { AppRoutingModule }     from './app-routing.module';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 import { SignUpComponent }   from './signup/signup';
+import "rxjs/Rx";
 // import {enableProdMode} from '@angular/core';
 // enableProdMode();
 
@@ -26,11 +32,11 @@ import { SignUpComponent }   from './signup/signup';
         AppRoutingModule,
         HttpModule,
         JsonpModule,
-        MaterialModule,
+        MatButtonModule, MatCheckboxModule,
         BrowserAnimationsModule,
         NoopAnimationsModule,
         ReactiveFormsModule,
-        FlexLayoutModule
+        MatIconModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatAutocompleteModule
     ],
     declarations: [
         AppComponent,

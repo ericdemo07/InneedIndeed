@@ -7,7 +7,7 @@ import { Person } from '../_model/person';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  moduleId: module.id,
+  // moduleId: module.id,
   templateUrl: './addnew_tab.html',
   styleUrls: ['./addnew_tab.css']
 })

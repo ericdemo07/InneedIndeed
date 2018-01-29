@@ -1,113 +1,113 @@
 <div class="tab-border"></div>
 <!-- Note that the amount is in paise = 50 INR -- key secret-3LHpYOd9OHHSWFzhtrfT7JZz -->
-<md-card class="card-margin">
+<mat-card class="card-margin">
   <div *ngIf="person">
     <form>
-      <md-input-container class="form-full-width">
-        <input mdInput placeholder="PersonId (disabled)" value={{person.id}} [readonly]="true">
-      </md-input-container>
+      <mat-input-container class="form-full-width">
+        <input matInput placeholder="PersonId (disabled)" value={{person.id}} [readonly]="true">
+      </mat-input-container>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="First Name" [(ngModel)]="person.firstName" name="person.firstName" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="First Name" [(ngModel)]="person.firstName" name="person.firstName" [readonly]="true">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Last Name" [(ngModel)]="person.lastName" name="person.lastName" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Last Name" [(ngModel)]="person.lastName" name="person.lastName" [readonly]="true">
+            </mat-input-container>
           </td>
         </tr>
       </table>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="City" [(ngModel)]="person.city" name="person.city" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="City" [(ngModel)]="person.city" name="person.city" [readonly]="true">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="State" [(ngModel)]="person.state" name="person.state" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="State" [(ngModel)]="person.state" name="person.state" [readonly]="true">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput #postalCode maxlength="6" placeholder="PostalCode" [(ngModel)]="person.postalCode" name="person.postalCode" [readonly]="true">
-              <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput #postalCode maxlength="6" placeholder="PostalCode" [(ngModel)]="person.postalCode" name="person.postalCode" [readonly]="true">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-input-container>
           </td>
         </tr>
       </table>
       <p>
-        <md-input-container class="form-full-width">
-          <textarea mdInput placeholder="Address Line 1" [(ngModel)]="person.addressLine1" name="person.addressLine1" [readonly]="true"></textarea>
-        </md-input-container>
-        <md-input-container class="form-full-width">
-          <textarea mdInput placeholder="Address Line 2" [(ngModel)]="person.addressLine2" name="person.addressLine2" [readonly]="true"></textarea>
-        </md-input-container>
+        <mat-input-container class="form-full-width">
+          <textarea matInput placeholder="Address Line 1" [(ngModel)]="person.addressLine1" name="person.addressLine1" [readonly]="true"></textarea>
+        </mat-input-container>
+        <mat-input-container class="form-full-width">
+          <textarea matInput placeholder="Address Line 2" [(ngModel)]="person.addressLine2" name="person.addressLine2" [readonly]="true"></textarea>
+        </mat-input-container>
       </p>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="DonationAmount (disabled)" [(ngModel)]="person.donationAmount" name="person.donationAmount" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="DonationAmount (disabled)" [(ngModel)]="person.donationAmount" name="person.donationAmount" [readonly]="true">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Representative Id" [(ngModel)]="person.representativeId" name="person.representativeId" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Representative Id" [(ngModel)]="person.representativeId" name="person.representativeId" [readonly]="true">
+            </mat-input-container>
           </td>
         </tr>
       </table>
-      <md-input-container class="form-full-width">
-        <textarea mdInput placeholder="About" [(ngModel)]="person.content" name="person.content" [readonly]="true"></textarea>
-      </md-input-container>
+      <mat-input-container class="form-full-width">
+        <textarea matInput placeholder="About" [(ngModel)]="person.content" name="person.content" [readonly]="true"></textarea>
+      </mat-input-container>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Mail Id" [(ngModel)]="person.mailId" name="person.mailId" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Mail Id" [(ngModel)]="person.mailId" name="person.mailId" [readonly]="true">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Phone" [(ngModel)]="person.phone" name="person.phone" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Phone" [(ngModel)]="person.phone" name="person.phone" [readonly]="true">
+            </mat-input-container>
           </td>
         </tr>
       </table>
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Liked By" [(ngModel)]="person.likesCount" name="person.likesCount" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Liked By" [(ngModel)]="person.likesCount" name="person.likesCount" [readonly]="true">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Shared By" [(ngModel)]="person.shareCount" name="person.shareCount" [readonly]="true">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Shared By" [(ngModel)]="person.shareCount" name="person.shareCount" [readonly]="true">
+            </mat-input-container>
           </td>
         </tr>
       </table>
@@ -126,4 +126,4 @@
       </table>
     </form>
   </div>
-</md-card>
+</mat-card>

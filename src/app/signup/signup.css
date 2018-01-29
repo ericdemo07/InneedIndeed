@@ -15,7 +15,7 @@
 }
 
 .example-header-image {
-  background-image: url('lib/img/inneed_img1.jpg');
+  background-image: url('../../lib/img/inneed_img1.jpg');
   background-size: cover;
 }
 

@@ -1,30 +1,30 @@
 <!-- <div class="tab-border"></div> -->
 <div style="padding-top:20px;"></div>
 
-<md-card class="card-margin">
+<mat-card class="card-margin">
   <form>
     <div *ngIf="flagSignUp; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
-      <md-toolbar>SignUp Page</md-toolbar>
+      <mat-toolbar>SignUp Page</mat-toolbar>
     </ng-template>
     <ng-template #elseBlock>
-      <md-toolbar>LogIn Page</md-toolbar>
+      <mat-toolbar>LogIn Page</mat-toolbar>
     </ng-template>
     <div *ngIf="flagSignUp">
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="First Name" [(ngModel)]="user.firstName" name="user.firstName">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="First Name" [(ngModel)]="user.firstName" name="user.firstName">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Last Name" [(ngModel)]="user.lastName" name="user.lastName">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Last Name" [(ngModel)]="user.lastName" name="user.lastName">
+            </mat-input-container>
           </td>
         </tr>
       </table>
@@ -34,43 +34,43 @@
       <table class="form-full-width" cellspacing="1">
         <tr>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Mail Id" [(ngModel)]="user.mailId" name="user.mailId">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Mail Id" [(ngModel)]="user.mailId" name="user.mailId">
+            </mat-input-container>
           </td>
           <td>
             &nbsp;&nbsp;
           </td>
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Phone" [(ngModel)]="user.phone" name="user.phone">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Phone" [(ngModel)]="user.phone" name="user.phone">
+            </mat-input-container>
           </td>
         </tr>
       </table>
     </ng-template>
     <ng-template #elseBlock3>
       <table class="form-full-width" cellspacing="1">
-        <md-input-container class="form-full-width">
-          <input mdInput placeholder="Email or mobile phone number" [(ngModel)]="user.mailId" name="user.mailId">
-        </md-input-container>
+        <mat-input-container class="form-full-width">
+          <input matInput placeholder="Email or mobile phone number" [(ngModel)]="user.mailId" name="user.mailId">
+        </mat-input-container>
       </table>
     </ng-template>
     <table class="form-full-width" cellspacing="0">
       <tr>
         <td>
-          <md-input-container class="form-full-width">
-            <input mdInput placeholder="Password" type="password" [(ngModel)]="user.password" name="user.password">
-          </md-input-container>
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="user.password">
+          </mat-input-container>
         </td>
         <td>
           &nbsp;&nbsp;
         </td>
         <div *ngIf="flagSignUp">
           <td>
-            <md-input-container class="form-full-width">
-              <input mdInput placeholder="Retype password" type="password" [(ngModel)]="passwordformatch" name="passwordformatch">
-            </md-input-container>
+            <mat-input-container class="form-full-width">
+              <input matInput placeholder="Retype password" type="password" [(ngModel)]="passwordformatch" name="passwordformatch">
+            </mat-input-container>
           </td>
         </div>
       </tr>
@@ -89,7 +89,7 @@
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-toolbar class="size-decrease">Existing User</md-toolbar>
+            <mat-toolbar class="size-decrease">Existing User</mat-toolbar>
           </td>
           <td>
             <a md-raised-button (click)="updateSignUpFalse()" class="form-full-width">Sign In</a>
@@ -102,7 +102,7 @@
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <md-toolbar class="size-decrease">New User</md-toolbar>
+            <mat-toolbar class="size-decrease">New User</mat-toolbar>
           </td>
           <td>
             <a md-raised-button (click)="updateSignUpTrue()" class="form-full-width">Sign Up</a>
@@ -111,4 +111,4 @@
       </table>
     </ng-template>
   </form>
-</md-card>
+</mat-card>

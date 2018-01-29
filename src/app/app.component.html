@@ -1,0 +1,22 @@
+<!--<h1>{{title}}</h1> -->
+<!--    <nav>
+  <a routerLink="/hometab" routerLinkActive="active">Home</a>
+  <a routerLink="/detail"  routerLinkActive="active">Detail</a>
+  <a routerLink="/addnew"  routerLinkActive="active">AddNew</a>
+</nav> -->
+<!-- <nav md-tab-nav-bar aria-label="">
+     <a md-tab-link
+        *ngFor="let routeLink of routeLinks; let i = index"
+        [routerLink]="routeLink.link"
+        [active]="activeLinkIndex === i"
+        (click)="activeLinkIndex = i">
+       {{routeLink.label}}
+     </a>
+     <button md-button [routerLink]="['/signup']" class = "right">Sign In</button>
+</nav> -->
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/hometab">Home</a>
+  <a routerLink="/addnew">AddNew</a>
+</nav>
+<router-outlet></router-outlet>
