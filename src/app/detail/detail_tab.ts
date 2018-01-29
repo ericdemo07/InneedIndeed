@@ -6,7 +6,6 @@ import { DefaultService } from '../_services/default_service';
 import { Person } from '../_model/person';
 
 @Component({
-  // moduleId: module.id,
   templateUrl: './detail_tab.html',
   styleUrls: ['./detail_tab.css']
 })

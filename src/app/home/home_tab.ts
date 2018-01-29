@@ -3,7 +3,6 @@ import { DefaultService } from '../_services/default_service';
 import { Person } from '../_model/person';
 
 @Component({
-  // moduleId: module.id,
   templateUrl: 'home_tab.html',
   styleUrls: ['home_tab.css']
 })

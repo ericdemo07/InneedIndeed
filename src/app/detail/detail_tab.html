@@ -114,13 +114,13 @@
       <table class="form-full-width" cellspacing="0">
         <tr>
           <td>
-            <a md-raised-button (click)="goBack()">Go Back</a>
+            <a mat-raised-button (click)="goBack()">Go Back</a>
           </td>
           <td>
-            <button type="button" md-raised-button [routerLink]="['/addnew', person.id]">Edit</button>
+            <button type="button" mat-raised-button [routerLink]="['/addnew', person.id]">Edit</button>
           </td>
           <td>
-            <button md-raised-button (click)="open()">Donate via RazorPay</button>
+            <button mat-raised-button (click)="open()">Donate via RazorPay</button>
           </td>
         </tr>
       </table>

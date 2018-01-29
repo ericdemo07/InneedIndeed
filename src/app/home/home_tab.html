@@ -1,8 +1,9 @@
 <!-- <div class="tab-border"></div> -->
 <div style="padding-top:20px;"></div>
 <mat-toolbar>Top charts this week</mat-toolbar>
-<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap">
-    <div *ngFor="let person of listOfPerson">
+
+<div class="row">
+    <div class="col-md-4 col-sm-6 col-12" *ngFor="let person of listOfPerson">
         <div class="card-size">
             <mat-card>
                 <mat-card-header>
@@ -16,9 +17,8 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button md-button><mat-icon class="material-icons md-light md-48">thumb_up</mat-icon></button>
-                    <!-- <button md-button><md-icon class="material-icons md-light md-48">share</md-icon></button> -->
-                    <button md-button [routerLink]="['/detail', person.id]">KnowMore</button>
+                    <button mat-button><mat-icon>thumb_up</mat-icon></button>
+                    <button mat-button [routerLink]="['/detail', person.id]">KnowMore</button>
                 </mat-card-actions>
             </mat-card>
         </div>
