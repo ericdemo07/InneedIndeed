@@ -1,31 +1,15 @@
-<!--<h1>{{title}}</h1> -->
-<!--    <nav>
-  <a routerLink="/hometab" routerLinkActive="active">Home</a>
-  <a routerLink="/detail"  routerLinkActive="active">Detail</a>
-  <a routerLink="/addnew"  routerLinkActive="active">AddNew</a>
-</nav> -->
-<!-- <nav md-tab-nav-bar aria-label="">
-     <a md-tab-link
-        *ngFor="let routeLink of routeLinks; let i = index"
-        [routerLink]="routeLink.link"
-        [active]="activeLinkIndex === i"
-        (click)="activeLinkIndex = i">
-       {{routeLink.label}}
-     </a>
-     <button md-button [routerLink]="['/signup']" class = "right">Sign In</button>
-</nav> -->
-<h1>{{title}}</h1>
 <!-- <nav>
   <a routerLink="/hometab">Home</a>
   <a routerLink="/addnew">AddNew</a>
 </nav> -->
 <mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" opened="true">
-    <a routerLink="/hometab">Home</a>
-    <br>
-    <a routerLink="/addnew">AddNew</a>
+  <mat-sidenav mode="side" opened="true" class="sidenav-wrapper">
+    <app-sidebar></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <h1>{{title}}</h1>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

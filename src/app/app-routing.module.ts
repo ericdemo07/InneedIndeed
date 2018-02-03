@@ -4,6 +4,7 @@ import { HomeTabComponent } from './home/home_tab';
 import { DetailTabComponent } from './detail/detail_tab';
 import { AddNewTabComponent } from './addnew/addnew_tab';
 import { SignUpComponent } from './signup/signup';
+import { RouterLinkActive } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '/hometab', pathMatch: 'full' },
@@ -16,6 +17,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule, RouterLinkActive]
 })
 export class AppRoutingModule { }

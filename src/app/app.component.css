@@ -43,3 +43,16 @@ nav a {
   left: 0;
   right: 0;
 }
+
+.sidenav-wrapper{
+  padding-top: 40px;
+  width: 250px;
+  padding-bottom: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main-content{
+  padding-top: 40px;
+  padding-left: 10px;
+}

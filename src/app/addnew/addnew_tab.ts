@@ -13,7 +13,7 @@ import { FormControl } from '@angular/forms';
 })
 
 
-export class AddNewTabComponent {
+export class AddNewTabComponent{
   person: Person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
   stateCtrl: FormControl;
   filteredStates: any;

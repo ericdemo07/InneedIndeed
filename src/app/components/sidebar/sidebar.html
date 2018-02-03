@@ -1,0 +1,14 @@
+<mat-list>
+  <mat-divider></mat-divider>
+  <mat-list-item routerLinkActive="active" *ngFor="let menuItem of menuItems" class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+    <!-- <div class="nav-item"> -->
+      <a mat-button [routerLink]="[menuItem.path]">
+        <mat-icon mat-list-icon>{{menuItem.icon}}</mat-icon>&nbsp;&nbsp;&nbsp;
+        {{menuItem.title}}
+      </a>
+    <!-- </div> -->
+    <br>
+  </mat-list-item>
+  <br>
+  <mat-divider></mat-divider>
+</mat-list>
