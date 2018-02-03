@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var person_schema = new Schema({
+var articleSchema = new Schema({
   firstName: String,
   lastName: String,
   city: String,
@@ -25,10 +25,8 @@ var person_schema = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var person_save = mongoose.model('SavePerson', person_schema);
-
-// make this available to our users in our Node applications
+var articleModel = mongoose.model('SaveArticle', articleSchema);
 
 module.exports = {
-  person_save: person_save
+  articleModel: articleModel
 }

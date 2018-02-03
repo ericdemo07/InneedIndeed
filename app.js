@@ -1,17 +1,20 @@
 var express = require('express');
-var app = express();
 var bodyParser = require('body-parser');
-var db = require('./util/db_conn');
-var saveperson = require('./dao/addperson');
-var saveuser = require('./dao/adduser');
-var get = require('./dao/getperson');
-var updateperson = require('./dao/updateperson');
-var remove = require('./dao/deleteperson');
 var util = require('util')
+var app = express();
+
+var db = require('./util/db_conn');
+
+var saveuser = require('./dao/adduser');
+
+var saveArticle = require('./dao/addarticle');
+var getArticle = require('./dao/getarticle');
+var updateArticle = require('./dao/updateArticle');
+var deleteArticle = require('./dao/deleteArticle');
 
 db.connect_to_database();
 
-// saveperson.save1();
+//saveArticle.save1();
 // get.get_all();
 // get.get_one('firstName','Chris');
 // get.get_by_id('595617f17d0d182f140cad5e');
@@ -25,9 +28,9 @@ db.connect_to_database();
 app.use(express.static(__dirname + '/dist'));
 app.use(bodyParser.json());
 
-app.post('/getall', function(req, res) {
-  console.log("fetching all person records from database [" + req);
-  get.get_all(function(err, user) {
+app.post('/fetchallarticles', function(req, res) {
+  console.log("fetching all article from database [" + req);
+  getArticle.get_all(function(err, user) {
     if (err) {
       console.log(err);
     }
@@ -37,10 +40,9 @@ app.post('/getall', function(req, res) {
   });
 });
 
-
 app.get('/get_by_id/:id', function(req, res) {
   console.log("fetching record based on id");
-  get.get_by_id(req.params.id, function(err, user) {
+  getArticle.get_by_id(req.params.id, function(err, user) {
     if (err) {
       console.log(err);
     }
@@ -54,7 +56,7 @@ app.post('/save_by_id', function(req, res) {
   console.log("saving record based on id");
   console.log("\n\n [" + req.body);
   if (req.body['id'] === null || req.body['id'] === "") {
-    saveperson.save(req.body, function(err, user) {
+    saveArticle.save(req.body, function(err, user) {
       if (err) {
         console.log(err);
       }
@@ -63,7 +65,7 @@ app.post('/save_by_id', function(req, res) {
       });
     });
   } else {
-    updateperson.update_by_id(req.body, function(err, user) {
+    updateArticle.update_by_id(req.body, function(err, user) {
       if (err) {
         console.log(err);
       }

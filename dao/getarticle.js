@@ -1,7 +1,7 @@
-var Person = require('../models/person');
+var Article = require('../models/article');
 
 function get_all(callback) {
-   Person.person_save.find({}, function(err, users) {
+   Article.articleModel.find({}, function(err, users) {
     if (err) throw err;
     callback(err, users);
   });
@@ -13,14 +13,14 @@ function get_one(type, value) {
       firstName: value
     };
   }
-  Person.person_save.find(input, function(err, user) {
+  Article.articleModel.find(input, function(err, user) {
     if (err) throw err;
     console.log(user);
   });
 }
 
 function get_by_id(id,callback) {
-  Person.person_save.findById(id, function(err, user) {
+  Article.articleModel.findById(id, function(err, user) {
     if (err) throw err;
     callback(err, user);
   });

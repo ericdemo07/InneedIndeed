@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-declare const $: any;
+
 declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
 }
+
 export const ROUTES: RouteInfo[] = [
-    { path: 'hometab', title: 'Home1',  icon:'person', class: '' },
-    { path: 'detail/:id', title: 'Detail',  icon:'content_paste', class: '' },
-    { path: 'addnew', title: 'Addnew',  icon:'library_books', class: '' },
-    { path: 'addnew/:id', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: 'signup', title: 'SignUp',  icon:'location_on', class: '' }
+  { path: 'hometab', title: 'ListOfArticle', icon: 'assignment' },
+  { path: 'detail/:id', title: 'Detail', icon: 'info outline' },
+  { path: 'addnew', title: 'Addnew', icon: 'note add' },
+  { path: 'signup', title: 'SignUp', icon: 'account box' }
 ];
 
 @Component({
@@ -20,12 +19,9 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./sidebar.css']
 })
 
-
 export class SideBarComponent implements OnInit {
   menuItems: any[];
-
   constructor() { }
-
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }

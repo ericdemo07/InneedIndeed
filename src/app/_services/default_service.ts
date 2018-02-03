@@ -1,43 +1,46 @@
 
 import { Injectable } from '@angular/core';
-import { Person } from '../_model/person';
-import { PersonAsList } from '../_model/person_mock'
 import { Headers, RequestOptions, Http, Response } from '@angular/http';
+
 import 'rxjs/add/operator/toPromise';
+
+import { Article } from '../_model/article';
+import { PersonAsList } from '../_model/article_mock'
+
 @Injectable()
 export class DefaultService {
 
   constructor(private http: Http) { }
 
-  getListOfPerson(): Promise<any> {
-    return this.http.post("/getall", "formTypeRequestData")
+  getListOfArticle(): Promise<any> {
+    return this.http.post("/fetchallarticles", "formTypeRequestData")
       .toPromise()
       .then(result => result.json())
       .catch();
   }
 
-  getListOfPersonFromLocal(): Promise<Person[]> {
+  getListOfDummyArticle(): Promise<Article[]> {
     return Promise.resolve(PersonAsList);
   }
 
   getPerson(id: string): Promise<any> {
     return this.getPersonById(id).then(result => result)
-    .catch();
+      .catch();
   }
 
   getPersonById(id: string): Promise<any> {
-    return this.http.get("/get_by_id/"+id)
+    return this.http.get("/get_by_id/" + id)
       .toPromise()
       .then(result => result.json())
       .catch();
   }
 
-  savePersonDeatils(ob: Person): Promise<any> {
+  savePersonDeatils(ob: Article): Promise<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let obAsJson = JSON.stringify(ob);
 
-    return this.http.post("/save_by_id",ob,options)
+    return this.http.post("/save_by_id", ob, options)
       .toPromise()
       .then(result => result.json())
       .catch();

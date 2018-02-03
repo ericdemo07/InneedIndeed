@@ -1,7 +1,7 @@
-var Person = require('../models/person');
+var Article = require('../models/article');
 var moment = require('moment');
 
-var dummy_person1 = new Person.person_save({
+var dummy_person1 = new Article.articleModel({
   firstName: 'Chris',
   lastName: 'Logan',
   city: 'LasVegas City',
@@ -22,7 +22,7 @@ var dummy_person1 = new Person.person_save({
   updated_at: new Date()
 });
 
-var dummy_person2 = new Person.person_save({
+var dummy_person2 = new Article.articleModel({
   firstName: 'Matt',
   lastName: 'Demon',
   city: 'Texas',
@@ -43,7 +43,7 @@ var dummy_person2 = new Person.person_save({
   updated_at: new Date()
 });
 
-var dummy_person3 = new Person.person_save({
+var dummy_person3 = new Article.articleModel({
   firstName: 'Julia',
   lastName: 'Roberts',
   city: 'Massachusetts',
@@ -64,7 +64,7 @@ var dummy_person3 = new Person.person_save({
   updated_at: new Date()
 });
 
-var dummy_person4 = new Person.person_save({
+var dummy_person4 = new Article.articleModel({
   firstName: 'Rachel',
   lastName: 'McAdams',
   city: 'LasVegas City',
@@ -85,7 +85,7 @@ var dummy_person4 = new Person.person_save({
   updated_at: new Date()
 });
 
-var dummy_person5 = new Person.person_save({
+var dummy_person5 = new Article.articleModel({
   firstName: 'Gal',
   lastName: 'Gadot',
   city: 'Texas',
@@ -145,7 +145,7 @@ function save1() {
 }
 
 function save(ob) {
-  var obAsObject = new Person.person_save({
+  var obAsObject = new Article.articleModel({
     firstName: ob['firstName'],
     lastName: ob['lastName'],
     city: ob['city'],

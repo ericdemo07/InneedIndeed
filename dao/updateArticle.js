@@ -1,4 +1,4 @@
-var Person = require('../models/person');
+var Article = require('../models/article');
 var moment = require('moment');
 
 function update_by_id(ob) {
@@ -23,7 +23,7 @@ function update_by_id(ob) {
     dob: moment(ob['dob']).format('YYYY-MM-DD'),
     updated_at: new Date()
   };
-  Person.person_save.findByIdAndUpdate(id, updateObject, function(err, user) {
+  Article.articleModel.findByIdAndUpdate(id, updateObject, function(err, user) {
     if (err) throw err;
   });
 }
@@ -37,7 +37,7 @@ function update_many(type, oldvalue, newvalue) {
       firstName: newvalue
     };
   }
-  Person.person_save.findOneAndUpdate(inputold, inputnew, function(err, person) {
+  Article.articleModel.findOneAndUpdate(inputold, inputnew, function(err, person) {
     if (err) throw err;
 
     // we have the updated user returned to us

@@ -1,20 +1,22 @@
 import 'rxjs/add/operator/switchMap';
+
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { DefaultService } from '../_services/default_service';
-import { Person } from '../_model/person';
 import { FormControl } from '@angular/forms';
+
+import { DefaultService } from '../../_services/default_service';
+import { Article } from '../../_model/article';
 
 @Component({
   // moduleId: module.id,
-  templateUrl: './addnew_tab.html',
-  styleUrls: ['./addnew_tab.css']
+  templateUrl: './addarticle.html',
+  styleUrls: ['./addarticle.css']
 })
 
 
-export class AddNewTabComponent{
-  person: Person = new Person('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
+export class AddArticleComponent {
+  person: Article = new Article('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
   stateCtrl: FormControl;
   filteredStates: any;
   private id: any;
@@ -36,9 +38,9 @@ export class AddNewTabComponent{
     if (this.id != null) {
       this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id']).then(
         function(response) {
-          var temp: Person;
+          var temp: Article;
           var person = response.message;
-          temp = new Person(person._id, person.firstName, person.lastName, person.city, person.state,
+          temp = new Article(person._id, person.firstName, person.lastName, person.city, person.state,
             person.postalCode, person.addressLine1, person.addressLine2, person.donationAmount,
             person.content, person.img, person.mailId, person.phone,
             person.representativeId, person.likesCount, person.shareCount, person.dob);

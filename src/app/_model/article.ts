@@ -1,4 +1,4 @@
-export class Person {
+export class Article {
   constructor(
     private id: string,
     private firstName: string,
@@ -14,9 +14,9 @@ export class Person {
     private mailId: string,
     private phone: number,
     private representativeId: string,
-    private likesCount:number,
-    private shareCount:number,
-    private dob:Date
+    private likesCount: number,
+    private shareCount: number,
+    private dob: Date
   ) {
     this.id = id;
     this.firstName = firstName;
@@ -37,23 +37,19 @@ export class Person {
     this.dob = dob;
   }
 
-  public getId()
-  {
+  public getId() {
     return this.id;
   }
 
-  public getFullName()
-  {
+  public getFullName() {
     return this.firstName + " " + this.lastName;
   }
 
-  public getImg()
-  {
+  public getImg() {
     return this.img;
   }
 
-  public getMail()
-  {
+  public getMail() {
     return this.mailId;
   }
 }
