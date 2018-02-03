@@ -1,107 +1,56 @@
 <mat-card class="card-margin">
   <form>
     <mat-toolbar>Input details for new person to add</mat-toolbar>
-    <table class="form-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="First Name" [(ngModel)]="person.firstName" name="person.firstName">
-          </mat-input-container>
-        </td>
-        <td>
-          &nbsp;&nbsp;
-        </td>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="Last Name" [(ngModel)]="person.lastName" name="person.lastName">
-          </mat-input-container>
-        </td>
-      </tr>
-    </table>
-    <table class="form-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="City" [(ngModel)]="person.city" name="person.city">
-          </mat-input-container>
-        </td>
-        <td>
-          &nbsp;&nbsp;
-        </td>
-        <td>
-          <mat-input-container>
-            <input matInput placeholder="State" [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="person.state" name="person.state">
-          </mat-input-container>
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let state of filteredStates | async" [value]="state">
-              {{ state }}
-            </mat-option>
-          </mat-autocomplete>
-        </td>
-        <td>
-          &nbsp;&nbsp;
-        </td>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput #postalCode maxlength="6" placeholder="PostalCode" [(ngModel)]="person.postalCode" name="person.postalCode">
-            <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
-          </mat-input-container>
-        </td>
-      </tr>
-    </table>
-    <p>
-      <mat-input-container class="form-full-width">
-        <textarea matInput placeholder="Address Line 1" [(ngModel)]="person.addressLine1" name="person.addressLine1"></textarea>
-      </mat-input-container>
-      <mat-input-container class="form-full-width">
-        <textarea matInput placeholder="Address Line 2" [(ngModel)]="person.addressLine2" name="person.addressLine2"></textarea>
-      </mat-input-container>
-    </p>
-    <table class="form-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="DonationAmount (disabled)" [(ngModel)]="person.donationAmount" name="person.donationAmount" disabled>
-          </mat-input-container>
-        </td>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="Representative Id" [(ngModel)]="person.representativeId" name="person.representativeId">
-          </mat-input-container>
-        </td>
-      </tr>
-    </table>
-    <mat-input-container class="form-full-width">
+    <mat-form-field>
+      <input matInput placeholder="First Name" [(ngModel)]="person.firstName" name="person.firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" [(ngModel)]="person.lastName" name="person.lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="City" [(ngModel)]="person.city" name="person.city">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="State" [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="person.state" name="person.state">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let state of filteredStates | async" [value]="state">
+          {{ state }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #postalCode maxlength="6" placeholder="PostalCode" [(ngModel)]="person.postalCode" name="person.postalCode">
+      <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Address Line 1" [(ngModel)]="person.addressLine1" name="person.addressLine1"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Address Line 2" [(ngModel)]="person.addressLine2" name="person.addressLine2"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="DonationAmount (disabled)" [(ngModel)]="person.donationAmount" name="person.donationAmount" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Representative Id" [(ngModel)]="person.representativeId" name="person.representativeId">
+    </mat-form-field>
+    <mat-form-field>
       <textarea matInput placeholder="About" [(ngModel)]="person.content" name="person.content"></textarea>
-    </mat-input-container>
+    </mat-form-field>
+    <br>
+    <br> placehoder for datepicker
     <br>
     <br>
-      placehoder for datepicker
-    <br>
-    <br>
-    <table class="form-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="Mail Id" [(ngModel)]="person.mailId" name="person.mailId">
-          </mat-input-container>
-        </td>
-        <td>
-          &nbsp;&nbsp;
-        </td>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="Phone" [(ngModel)]="person.phone" name="person.phone">
-          </mat-input-container>
-        </td>
-      </tr>
-    </table>
-    <table class="form-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <a mat-raised-button (click)="savePersonDeatils()">Save</a>
-        </td>
-      </tr>
-    </table>
+    <mat-form-field>
+      <input matInput placeholder="Mail Id" [(ngModel)]="person.mailId" name="person.mailId">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Phone" [(ngModel)]="person.phone" name="person.phone">
+    </mat-form-field>
+    <mat-form-field>
+      <a mat-raised-button (click)="savePersonDeatils()">Save</a>
+    </mat-form-field>
   </form>
 </mat-card>

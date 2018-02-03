@@ -15,8 +15,17 @@
      <button md-button [routerLink]="['/signup']" class = "right">Sign In</button>
 </nav> -->
 <h1>{{title}}</h1>
-<nav>
+<!-- <nav>
   <a routerLink="/hometab">Home</a>
   <a routerLink="/addnew">AddNew</a>
-</nav>
-<router-outlet></router-outlet>
+</nav> -->
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened="true">
+    <a routerLink="/hometab">Home</a>
+    <br>
+    <a routerLink="/addnew">AddNew</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { SignUpComponent } from './signup/signup';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 import "rxjs/Rx";
 // import {enableProdMode} from '@angular/core';
 // enableProdMode();
@@ -37,7 +39,7 @@ import "rxjs/Rx";
     NoopAnimationsModule,
     ReactiveFormsModule,
     MatIconModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatAutocompleteModule,
-    MatFormFieldModule, MatInputModule
+    MatFormFieldModule, MatInputModule, MatSidenavModule
   ],
   declarations: [
     AppComponent,
