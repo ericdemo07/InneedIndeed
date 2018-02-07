@@ -1,26 +1,35 @@
 <!-- <div class="tab-border"></div> -->
 <div style="padding-top:20px;"></div>
 <mat-toolbar>Top charts this week</mat-toolbar>
+<mat-slide-toggle [(ngModel)]="checked">Display as table</mat-slide-toggle>
 
-<div class="row">
-  <div class="col-md-4 col-sm-6 col-12" *ngFor="let article of listOfArticle">
-    <div class="card-size">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{article.name}}</mat-card-title>
-          <mat-card-subtitle>{{article.area}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src={{article.img}}>
-        <mat-card-content>
-          <p>
-            {{article.content}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button><mat-icon>thumb_up</mat-icon></button>
-          <button mat-button [routerLink]="['/detail', article.id]">KnowMore</button>
-        </mat-card-actions>
-      </mat-card>
+<div *ngIf="!checked">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-12" *ngFor="let article of listOfArticle">
+      <div class="card-size">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{article.name}}</mat-card-title>
+            <mat-card-subtitle>{{article.area}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src={{article.img}}>
+          <mat-card-content>
+            <p>
+              {{article.content}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button><mat-icon>thumb_up</mat-icon></button>
+            <button mat-button [routerLink]="['/detail', article.id]">KnowMore</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
+  </div>
+</div>
+<div *ngIf="checked">
+  <div class="row">
+    <ag-grid-angular style="height: 250px; width: 1200px;" class="ag-theme-fresh" [rowData]="listOfArticle" [columnDefs]="columnDefs" enableColResize enableSorting enableFilter>
+    </ag-grid-angular>
   </div>
 </div>

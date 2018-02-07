@@ -9,7 +9,97 @@ import { Article } from '../../_model/article';
 })
 
 export class ArticleListComponent {
-  constructor(private defaultService: DefaultService) { }
+  private columnDefs: any[];
+  private checked: false;
+  constructor(private defaultService: DefaultService) {
+    this.columnDefs = [
+      {
+        headerName: "Id",
+        field: "id",
+        width: 80
+      },
+      {
+        headerName: "FirstName",
+        field: "firstName",
+        width: 80
+      },
+      {
+        headerName: "LastName",
+        field: "lastName",
+        width: 80
+      },
+      {
+        headerName: "City",
+        field: "city",
+        width: 80
+      },
+      {
+        headerName: "State",
+        field: "state",
+        width: 80
+      },
+      {
+        headerName: "PostalCode",
+        field: "postalCode",
+        width: 80
+      },
+      {
+        headerName: "AddressLine1",
+        field: "addressLine1",
+        width: 80
+      },
+      {
+        headerName: "AddressLine2",
+        field: "addressLine2",
+        width: 80
+      },
+      {
+        headerName: "DonationAmount",
+        field: "donationAmount",
+        width: 80
+      },
+      {
+        headerName: "Content",
+        field: "content",
+        width: 80
+      },
+      {
+        headerName: "Img",
+        field: "img",
+        width: 80
+      },
+      {
+        headerName: "MailId",
+        field: "mailId",
+        width: 80
+      },
+      {
+        headerName: "Phone",
+        field: "phone",
+        width: 80
+      },
+      {
+        headerName: "RepresentativeId",
+        field: "representativeId",
+        width: 80
+      },
+      {
+        headerName: "LikesCount",
+        field: "likesCount",
+        width: 80
+      },
+      {
+        headerName: "ShareCount",
+        field: "shareCount",
+        width: 80
+      },
+      {
+        headerName: "Dob",
+        field: "dob",
+        width: 80
+      }
+    ];
+  }
   listOfArticle: Article[];
   listOfDummyArticle: Article[];
 
@@ -25,7 +115,6 @@ export class ArticleListComponent {
     var listOfArticle: Article[] = [];
     this.defaultService.getListOfArticle().then(
       function(response) {
-        console.log(response);
         for (var i = 0; i < response.message.length; i++) {
           var article = new Article(response.message[i]._id, response.message[i].firstName,
             response.message[i].lastName, response.message[i].city, response.message[i].state,
@@ -39,4 +128,8 @@ export class ArticleListComponent {
       }
     ).then(listOfArticle => this.listOfArticle = listOfArticle);
   }
+
+  // diaplayAsTable(): void {
+  //   console.log("hello ["+ this.checked);
+  // }
 }

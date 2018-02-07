@@ -17,6 +17,11 @@ import { MatFormFieldControl } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+//other component
+import { AgGridModule } from "ag-grid-angular/main";
+
 
 //project local component
 import { SignUpComponent } from './signup/signup';
@@ -47,7 +52,10 @@ import "rxjs/Rx";
     ReactiveFormsModule,
     MatIconModule, MatToolbarModule, MatCardModule, MatAutocompleteModule,
     MatFormFieldModule, MatInputModule, MatSidenavModule, MatSelectModule,
-    MatButtonToggleModule, MatDividerModule, MatListModule
+    MatButtonToggleModule, MatDividerModule, MatListModule, MatSlideToggleModule,
+    AgGridModule.withComponents([
+      ArticleListComponent
+    ])
   ],
   declarations: [
     AppComponent,
