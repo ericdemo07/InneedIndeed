@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //material component
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
@@ -43,13 +42,13 @@ import "rxjs/Rx";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpModule,
     JsonpModule,
     MatButtonModule, MatCheckboxModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    ReactiveFormsModule,
     MatIconModule, MatToolbarModule, MatCardModule, MatAutocompleteModule,
     MatFormFieldModule, MatInputModule, MatSidenavModule, MatSelectModule,
     MatButtonToggleModule, MatDividerModule, MatListModule, MatSlideToggleModule,

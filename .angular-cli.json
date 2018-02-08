@@ -19,7 +19,7 @@
     "styles": [
       "lib/styles.scss"
     ],
-    "scripts": [],
+    "scripts": ["lib/checkout.js"],
     "environmentSource": "environments/environment.ts",
     "environments": {
       "dev": "environments/environment.ts",

@@ -128,8 +128,4 @@ export class ArticleListComponent {
       }
     ).then(listOfArticle => this.listOfArticle = listOfArticle);
   }
-
-  // diaplayAsTable(): void {
-  //   console.log("hello ["+ this.checked);
-  // }
 }
