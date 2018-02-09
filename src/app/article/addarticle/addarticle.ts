@@ -16,7 +16,7 @@ import { Article } from '../../_model/article';
 
 
 export class AddArticleComponent {
-  person: Article = new Article('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
+  article: Article = new Article('', '', '', '', '', null, '', '', null, '', '', '', null, '', null, null, null);
   stateCtrl: FormControl;
   filteredStates: any;
   private id: any;
@@ -39,14 +39,14 @@ export class AddArticleComponent {
       this.route.params.switchMap((params: Params) => this.defaultService.getPerson(params['id']).then(
         function(response) {
           var temp: Article;
-          var person = response.message;
-          temp = new Article(person._id, person.firstName, person.lastName, person.city, person.state,
-            person.postalCode, person.addressLine1, person.addressLine2, person.donationAmount,
-            person.content, person.img, person.mailId, person.phone,
-            person.representativeId, person.likesCount, person.shareCount, person.dob);
+          var article = response.message;
+          temp = new Article(article._id, article.firstName, article.lastName, article.city, article.state,
+            article.postalCode, article.addressLine1, article.addressLine2, article.donationAmount,
+            article.content, article.img, article.mailId, article.phone,
+            article.representativeId, article.likesCount, article.shareCount, article.dob);
           return temp;
         }
-      )).subscribe(person => this.person = person);
+      )).subscribe(article => this.article = article);
     }
   }
 
@@ -55,7 +55,7 @@ export class AddArticleComponent {
   }
 
   savePersonDeatils(): void {
-    this.defaultService.savePersonDeatils(this.person);
+    this.defaultService.savePersonDeatils(this.article);
     this.location.back();
   }
 
