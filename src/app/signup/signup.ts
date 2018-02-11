@@ -3,25 +3,16 @@ import { LoginService } from '../_services/login_service';
 import { User } from '../_model/user';
 
 @Component({
-  // moduleId: module.id,
   templateUrl: 'signup.html',
   styleUrls: ['signup.css']
 })
 
 export class SignUpComponent {
+  private existingUserFlag: true;
   user = new User('', '', '', '', null, '');
   passwordformatch: string = '';
-  flagSignUp: boolean = false;
 
   constructor(private loginService: LoginService) { }
-
-  updateSignUpTrue() {
-    this.flagSignUp = true;
-  }
-
-  updateSignUpFalse() {
-    this.flagSignUp = false;
-  }
 
   signup() {
     if (this.passwordformatch != this.user.getPassword()) {

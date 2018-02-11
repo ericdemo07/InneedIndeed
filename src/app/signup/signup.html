@@ -1,114 +1,79 @@
-<!-- <div class="tab-border"></div> -->
-<div style="padding-top:20px;"></div>
-
-<mat-card class="card-margin">
-  <form>
-    <div *ngIf="flagSignUp; then thenBlock else elseBlock"></div>
-    <ng-template #thenBlock>
-      <mat-toolbar>SignUp Page</mat-toolbar>
-    </ng-template>
-    <ng-template #elseBlock>
-      <mat-toolbar>LogIn Page</mat-toolbar>
-    </ng-template>
-    <div *ngIf="flagSignUp">
-      <table class="form-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-input-container class="form-full-width">
-              <input matInput placeholder="First Name" [(ngModel)]="user.firstName" name="user.firstName">
-            </mat-input-container>
-          </td>
-          <td>
-            &nbsp;&nbsp;
-          </td>
-          <td>
-            <mat-input-container class="form-full-width">
-              <input matInput placeholder="Last Name" [(ngModel)]="user.lastName" name="user.lastName">
-            </mat-input-container>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div *ngIf="flagSignUp; then thenBlock3 else elseBlock3"></div>
-    <ng-template #thenBlock3>
-      <table class="form-full-width" cellspacing="1">
-        <tr>
-          <td>
-            <mat-input-container class="form-full-width">
-              <input matInput placeholder="Mail Id" [(ngModel)]="user.mailId" name="user.mailId">
-            </mat-input-container>
-          </td>
-          <td>
-            &nbsp;&nbsp;
-          </td>
-          <td>
-            <mat-input-container class="form-full-width">
-              <input matInput placeholder="Phone" [(ngModel)]="user.phone" name="user.phone">
-            </mat-input-container>
-          </td>
-        </tr>
-      </table>
-    </ng-template>
-    <ng-template #elseBlock3>
-      <table class="form-full-width" cellspacing="1">
-        <mat-input-container class="form-full-width">
-          <input matInput placeholder="Email or mobile phone number" [(ngModel)]="user.mailId" name="user.mailId">
-        </mat-input-container>
-      </table>
-    </ng-template>
-    <table class="form-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-input-container class="form-full-width">
-            <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="user.password">
-          </mat-input-container>
-        </td>
-        <td>
-          &nbsp;&nbsp;
-        </td>
-        <div *ngIf="flagSignUp">
-          <td>
-            <mat-input-container class="form-full-width">
-              <input matInput placeholder="Retype password" type="password" [(ngModel)]="passwordformatch" name="passwordformatch">
-            </mat-input-container>
-          </td>
+<div class="row">
+  <div class="col-md-8">
+    <mat-card>
+      NewUser
+      <mat-slide-toggle [(ngModel)]="existingUserFlag">ExistingUser</mat-slide-toggle><br>
+      <div *ngIf="!existingUserFlag">
+        <mat-card class="mat-card-head">SignUp</mat-card><br>
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="First Name" [(ngModel)]="user.firstName" name="user.firstName">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Last Name" [(ngModel)]="user.lastName" name="user.lastName">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Mail Id" [(ngModel)]="user.mailId" name="user.mailId">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Phone" [(ngModel)]="user.phone" name="user.phone">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="user.password">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Retype password" type="password" [(ngModel)]="passwordformatch" name="passwordformatch">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <a mat-raised-button (click)="signup()">SignUp</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="existingUserFlag">
+        <mat-card class="mat-card-head">LogIn</mat-card>
+        <div class="row">
+          <div class="col-md-12">
+            <mat-form-field>
+              <input matInput placeholder="Email or mobile phone number" [(ngModel)]="user.mailId" name="user.mailId">
+            </mat-form-field>
+          </div>
         </div>
-      </tr>
-    </table>
-    <div *ngIf="flagSignUp; then thenBlock1 else elseBlock1"></div>
-    <ng-template #thenBlock1>
-      <a md-raised-button (click)="signup()" class="form-full-width">Continue</a>
-    </ng-template>
-    <ng-template #elseBlock1>
-      <a md-raised-button (click)="login()" class="form-full-width">Log In</a>
-    </ng-template>
-    <div *ngIf="flagSignUp; then thenBlock2 else elseBlock2"></div>
-
-    <ng-template #thenBlock2>
-      <br><br>
-      <table class="form-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-toolbar class="size-decrease">Existing User</mat-toolbar>
-          </td>
-          <td>
-            <a md-raised-button (click)="updateSignUpFalse()" class="form-full-width">Sign In</a>
-          </td>
-        </tr>
-      </table>
-    </ng-template>
-    <ng-template #elseBlock2>
-      <br><br>
-      <table class="form-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-toolbar class="size-decrease">New User</mat-toolbar>
-          </td>
-          <td>
-            <a md-raised-button (click)="updateSignUpTrue()" class="form-full-width">Sign Up</a>
-          </td>
-        </tr>
-      </table>
-    </ng-template>
-  </form>
-</mat-card>
+        <div class="row">
+          <div class="col-md-12">
+            <mat-form-field>
+              <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="user.password">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <a mat-raised-button (click)="login()">Login</a>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-md-4">
+    This place is reserved for internal ad
+  </div>
+</div>
