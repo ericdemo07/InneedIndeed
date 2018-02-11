@@ -1,8 +1,7 @@
-.example-container {
-  display: flex;
-  flex-direction: column;
+.mat-form-field{
+    display: block;
 }
 
-.example-container > * {
-  width: 100%;
+.mat-card-head {
+  background-color: red !important;
 }

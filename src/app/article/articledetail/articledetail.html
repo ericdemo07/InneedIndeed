@@ -1,28 +1,29 @@
 <!-- Note that the amount is in paise = 50 INR -- key secret-3LHpYOd9OHHSWFzhtrfT7JZz -->
 <div class="row">
   <div class="col-md-8">
+    <mat-card class="mat-card-head">Details</mat-card>
 
     <mat-card>
-      <mat-card-header>
+      <!-- <mat-card-header>
         <mat-card-title>Details</mat-card-title>
-      </mat-card-header>
+      </mat-card-header> -->
       <div *ngIf="article">
-        <form class="example-container" [style.fontSize.px]="getFontSize()">
+        <form [style.fontSize.px]="getFontSize()">
           <!-- <mat-form-field>
             <input matInput placeholder="PersonId (disabled)" value={{article.id}} [readonly]="true">
           </mat-form-field> -->
-          <!-- <div class="row">
-            <div class="col-md-6"> -->
+          <div class="row">
+            <div class="col-md-6">
               <mat-form-field>
                 <input matInput placeholder="First Name" [(ngModel)]="article.firstName" name="article.firstName" [readonly]="true">
               </mat-form-field>
-            <!-- </div>
-            <div class="col-md-6"> -->
+            </div>
+            <div class="col-md-6">
               <mat-form-field>
                 <input matInput placeholder="Last Name" [(ngModel)]="article.lastName" name="article.lastName" [readonly]="true">
               </mat-form-field>
-            <!-- </div>
-          </div> -->
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-4">
               <mat-form-field>
