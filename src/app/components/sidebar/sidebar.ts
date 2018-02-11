@@ -8,9 +8,10 @@ declare interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
   { path: 'hometab', title: 'ListOfArticle', icon: 'assignment' },
-  { path: 'detail/*', title: 'Detail', icon: 'info outline' },
-  { path: 'addnew', title: 'Addnew', icon: 'person add' },
-  { path: 'signup', title: 'SignUp', icon: 'plus one' }
+  // { path: 'detail/*', title: 'Detail', icon: 'info outline' },
+  //TODO:double word icon are displaying wrong
+  { path: 'addnew', title: 'Add Article', icon: 'face' },
+  { path: 'signup', title: 'SignUp', icon: 'input' }
 ];
 
 @Component({
