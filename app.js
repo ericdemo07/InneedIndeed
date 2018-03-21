@@ -1,18 +1,26 @@
+//loading common libraries
 var express = require('express');
 var bodyParser = require('body-parser');
 var util = require('util')
 var app = express();
+var moment = require('moment');
 
 var db = require('./util/db_conn');
 
-var saveuser = require('./dao/adduser');
-
+//loading app related files
+var saveUser = require('./dao/adduser');
 var saveArticle = require('./dao/addarticle');
 var getArticle = require('./dao/getarticle');
 var updateArticle = require('./dao/updateArticle');
 var deleteArticle = require('./dao/deleteArticle');
 
 db.connect_to_database();
+
+console.log("test112");
+var a11 = moment.parseZone("2018/07/10 13:59:59+000");
+var a22 = moment.parseZone("2018-07-09T15:59:59Z");
+console.log(a11.format());
+console.log(a22.format());
 
 //saveArticle.save1();
 // get.get_all();
@@ -28,6 +36,8 @@ db.connect_to_database();
 app.use(express.static(__dirname + '/dist'));
 app.use(bodyParser.json());
 
+
+//get call
 app.post('/fetchallarticles', function(req, res) {
   console.log("fetching all article from database [" + req);
   getArticle.get_all(function(err, user) {
@@ -54,7 +64,6 @@ app.get('/get_by_id/:id', function(req, res) {
 
 app.post('/save_by_id', function(req, res) {
   console.log("saving record based on id");
-  console.log("\n\n [" + req.body);
   if (req.body['id'] === null || req.body['id'] === "") {
     saveArticle.save(req.body, function(err, user) {
       if (err) {
@@ -78,7 +87,7 @@ app.post('/save_by_id', function(req, res) {
 
 app.post('/login_signup', function(req, res) {
   console.log("\n\nlogin check");
-  saveuser.login_signup(req.body, function(err, user) {
+  saveUser.login_signup(req.body, function(err, user) {
     if (err) {
       console.log(err);
     }
@@ -99,5 +108,5 @@ app.get('*', function(req, res) {
 
 // to start express server
 app.listen(4000, function() {
-  console.log('yamlgenerator service started on port 4000!');
+  console.log('\n\n----------------InneedIndeed------------------\nservice started on port 4000!\n\n');
 });
